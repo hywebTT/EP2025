@@ -1,0 +1,585 @@
+/* Reset + 基礎 */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #333;
+   padding-top: 30px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ✅ TopMenu 白底置頂，右對齊 */
+/* TopMenu 靠右排版 + icon 對齊 */
+.topMenu-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.topMenu-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6px 15px;
+  margin: 0;
+  list-style: none;
+}
+
+.topMenu-list .ttLogo img {
+  height: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.topMenu-list li {
+  position: relative;
+}
+.topMenu-list li a {
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+}
+.topMenu-list svg {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.topMenu-list .ttLogo {
+  padding: 0 10px;
+}
+
+
+.topMenu-list .hasChild > a .arrow {
+  font-size: 10px;
+  margin-left: 3px;
+}
+
+/* ✅ 次選單無列點、白底、陰影 */
+.topMenu-list .subMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: none;
+}
+
+.topMenu-list .hasChild:hover .subMenu {
+  display: block;
+}
+
+.topMenu-list .subMenu li {
+  margin: 5px 0;
+}
+
+/* ✅ 加入 icon 的樣式 */
+.headerFavoriteBtn svg,
+.icon-cart svg {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Logo & Badges 區塊：黑色底與主選單一致 */
+.logo-and-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background-color: #111; /* 或深色與下方主選單對齊 */
+  color: white;
+}
+.logo-title-group {
+  display: flex;
+  align-items: center;
+}
+.logo-title-group .anko-logo-big {
+  height: 45px;
+  margin-right: 12px;
+}
+.logo-title-group .company-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.badges img {
+  height: 28px;
+  margin-left: 10px;
+}
+
+/* 主選單外觀 */
+.main-menu {
+  background-color: #111;
+}
+.main-menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.main-menu li {
+  position: relative;
+}
+.main-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+  font-weight: bold;
+}
+
+/* 次選單預設隱藏 */
+.main-menu .subMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  min-width: 160px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.main-menu .subMenu li {
+  width: 100%;
+}
+.main-menu .subMenu li a {
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: normal;
+}
+
+/* Hover 時顯示次選單 */
+.main-menu li.hasChild:hover .subMenu {
+  display: block;
+}
+
+
+/* ✅ Hero 區塊（示意） */
+.hero-section {
+  background: linear-gradient(to right, #222, #444);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 18px;
+}
+
+/* ✅ Footer */
+.anko-footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+.main-menu .hasChild > a.active {
+  background-color: #333;
+  color: #D4A017;
+  border-bottom: 2px solid #D4A017;
+}
+
+.main-menu .subMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.main-menu .subMenu.show {
+  max-height: 500px; /* 可根據需要調整 */
+  transition: max-height 0.4s ease-in;
+}
+.logo-and-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1c1c1c; /* 依照主視覺色系 */
+  color: white;
+  flex-wrap: wrap;
+}
+
+.logo-title-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.anko-logo-big {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.company-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  height: 40px;
+  max-width: 300px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 0;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #d4a514; /* 金黃色 */
+  color: white;
+  border: none;
+  padding: 0 20px;
+  font-size: 14px;
+  cursor: pointer;
+  height: 100%;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #c4940f;
+}
+
+
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.badge-icon {
+  height: 30px;
+}
+.logo-and-badges .search-box {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.topMenu-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white; /* 或你自己的背景色 */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 可選，讓它浮起來有層次感 */
+}
+.webFooter {
+  background: linear-gradient(to bottom, #111111, #1c1c1c);
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column,
+.emailUpdate {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-column h3,
+.emailUpdate p em {
+  color: gold;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-btn {
+  background: gold;
+  color: #111;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.social-icons img,
+.qr-code {
+  margin: 5px;
+  height: 30px;
+}
+
+.footer-bottom {
+  background-color: #f9f9f9;
+  color: #111;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-bottom img.tt-logo {
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.webFooter {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  color: #ffd700;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffd700;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.emailUpdate {
+  flex: 1 1 220px;
+  margin: 10px;
+}
+
+.emailUpdate p {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+.footer-bottom {
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom img.tt-logo {
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+.qr-section {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start; /* 如果想要置中改成 center */
+}
+
+.qr-code {
+  width: 60px;
+  height: 60px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.footer-subgroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.qr-code-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.qr-code {
+  width: 60px;
+  height: 60px;
+  border-radius: 0;
+}
+.logo-and-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background: #1a1a1a;
+  color: #fff;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.logo-title-group {
+  display: flex;
+  align-items: center;
+}
+.anko-logo-big {
+  height: 60px;
+  margin-right: 15px;
+}
+.company-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+.search-container {
+  position: relative;
+  width: 280px;
+  transition: all 0.3s ease;
+}
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+.search-input::placeholder {
+  color: #999;
+}
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: #666;
+}
+.search-input:focus {
+  width: 320px;
+}
+.badges {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.badge-icon {
+  height: 40px;
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="emotion-insertion-point" content="">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EP - Products List</title>
+  <link href="./EP - Products List_files/css" rel="stylesheet">
+  <link rel="stylesheet" href="./EP - Products List_files/slick.css">
+  <link rel="stylesheet" href="./EP - Products List_files/styleB.css">
+  <link rel="stylesheet" href="style.css" >
+  <script src="./EP - Products List_files/jquery-3.4.1.min.js"></script>
+  <script src="./EP - Products List_files/slick.min.js"></script>
+  <script src="./EP - Products List_files/jquery.touchSwipe.min.js"></script>
+  <script src="./EP - Products List_files/rwdTable.js"></script>
+  <script src="./EP - Products List_files/basic.js"></script>
+  <script src="./EP - Products List_files/basic-4-implements.js"></script>
+  <style>
+  .webFooter {
+    background: linear-gradient(to bottom right, #1a1a1a, #333);
+    color: white;
+    padding: 40px 20px 10px;
+    font-family: Arial, sans-serif;
+  }
+
+  .webFooter .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .webFooter .footer-column,
+  .webFooter .emailUpdate {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+
+  .webFooter h3 {
+    color: #FFD700;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .webFooter a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .webFooter a:hover {
+    text-decoration: underline;
+  }
+
+  .webFooter .footer-btn {
+    background-color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .webFooter .footer-btn:hover {
+    background-color: #ffcc00;
+  }
+
+  .webFooter .social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background: white;
+    border-radius: 50%;
+    padding: 3px;
+  }
+
+  .webFooter .qr-code {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .webFooter > p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .webFooter > p img {
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+</style>
+
+</head>
+<body style="">
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>anko首頁</title>
+<link href="style.css" rel="stylesheet"/></head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hasChildLinks = document.querySelectorAll('.main-menu li.hasChild > a');
+
+    hasChildLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // 清除其他 active 狀態（如只允許一個展開）
+        hasChildLinks.forEach(other => {
+          if (other !== this) {
+            other.classList.remove('active');
+            other.nextElementSibling.classList.remove('show');
+          }
+        });
+
+        // 切換當前選單 active 和展開
+        this.classList.toggle('active');
+        const subMenu = this.nextElementSibling;
+        subMenu.classList.toggle('show');
+      });
+    });
+  });
+</script>
+
+<body>
+
+<!-- TopMenu 置頂無縫，與 logo/badge、主選單區塊緊密 -->
+<div class="topMenu-fixed">
+  <div class="topMenu-container">
+    <ul class="topMenu-list">
+      <li class="hasChild">
+        <a href="#">English <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">正體中文</a></li>
+          <li><a href="#">Español</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="headerFavoriteBtn">
+          <svg width="16" height="16" fill="#D4A017" viewBox="0 0 24 24" style="margin-right:5px; vertical-align:middle;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Add to favorites
+        </a>
+      </li>
+
+      <li class="hasChild">
+        <a href="#">USD <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">Change</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Sign In</a></li>
+
+      <li class="hasChild">
+        <a href="#">Favorites <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Supplier</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <svg width="16" height="16" fill="#D4A017" viewBox="0 0 24 24" style="margin-right:5px; vertical-align:middle;"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14h9.62c.76 0 1.44-.43 1.76-1.1l3.24-7.24A1 1 0 0 0 21 4H5.21L4.27 2.59A1 1 0 0 0 3.39 2H1v2h1.17l3.6 7.59-1.35 2.44A1.003 1.003 0 0 0 5.5 16h12v-2H7.16z"/></svg>
+          Items
+        </a>
+      </li>
+
+      <li class="ttLogo">
+        <a href="#">
+          <img src="images/taiwantrade.com.png" alt="Go to Taiwantrade" style="height: 26px; vertical-align: middle;">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  <!-- Logo 與徽章區塊 -->
+<header class="anko-header">
+<div class="logo-and-badges">
+  <div class="logo-title-group">
+    <img src="images/ANKO-Taiwan-Trade-180x100-100x100.png" class="anko-logo-big">
+    <span class="company-title">ANKO FOOD MACHINE CO., LTD.</span>
+  </div>
+
+  <!-- 中間搜尋區 -->
+<div class="search-container">
+      <input type="text" placeholder="Search products..." class="search-input">
+      <button class="search-icon">🔍</button>
+  </div>
+
+
+  <div class="badges">
+    <img src="images/icon-TaiwanTradeShows-100X100.png" alt="Trade Shows" class="badge-icon">
+    <img src="images/taiwan-excellence.png" alt="Taiwan Excellence" class="badge-icon">
+    <img src="images/year_label_23.png" alt="23th Year" class="badge-icon">
+    <img src="images/advanced_cert100X100.png" alt="Advanced Verified" class="badge-icon">
+  </div>
+</div>
+
+
+  <!-- 主選單 -->
+  <nav class="main-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="hasChild">
+        <a href="#">About Us</a>
+        <ul class="subMenu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Sales Service</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </li>
+      <li class="hasChild">
+        <a href="#">Products</a>
+        <ul class="subMenu">
+          <li><a href="#">Asian</a></li>
+          <li><a href="#">European</a></li>
+        </ul>
+      </li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Website</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+
+
+    
+ <!-- ./topZone -->
+
+
+  
+  <nav class="path">
+    <ul>
+      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/home.html">Home</a></li>
+      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Products</a></li>
+      <li>Wireless</li>
+    </ul>
+  </nav>
+
+  <div class="main twoColumn">
+    <section class="pageHeader">
+      <h2>Products</h2>
+    </section>
+
+    <aside class="leftSidebar">
+      <section class="pdCateTree">
+        <h2>Product Category</h2>
+        <ul class="tree">
+          <li class="hasChild"><a>Wireless</a>
+            <ul style="display: none;">
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">All</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">2.4G Hz</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">Infrared</a></li>
+            </ul>
+          </li>
+          <li><a>Dash-line-between-words-can-be-broken</a></li>
+          <li class="hasChild"><a>But/Slash/between/words/would/not/be/broken</a>
+          <ul style="display: none;">
+            <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">All</a></li>
+            <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">Xxxx</a></li>
+            <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">Xxxx Wwww</a></li>
+            <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX, XXXXXXX</a></li>
+          </ul>
+          </li>
+          <li class="hasChild"><a>Metallic/Rainbow PU/PVC/leather/sheet/cloth/cloth</a>
+            <ul style="display: none;">
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">All</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">xxxx</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">xxxx</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">xxxx</a></li>
+            </ul>
+          </li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">DJ / Studio / HIFI</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">Active Noise Cancelling</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">Speakerphone</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">Speaker / Amplifier</a></li>
+          <li class="hasChild"><a>Microphone</a>
+            <ul style="display: none;">
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">All</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">Xxxx</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">Xxxx Wwww</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">xxxx</a></li>
+            </ul>
+          </li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">Headphone Accessories</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">OBM Service</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">Buy Online</a></li>
+          <li class="hasChild"><a>Others</a>
+            <ul style="display: none;">
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html#">All</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">Xxxx</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">Xxxx Wwww</a></li>
+              <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_lp.html">xxxx</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="pdSlick slick-initialized slick-slider slick-vertical"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
+        
+        
+      
+        
+        
+        
+      <div class="slick-list draggable" style="height: 920px;"><div class="slick-track" style="opacity: 1; height: 3680px; transform: translate3d(0px, -1610px, 0px);"><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="-4" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph05.jpg">
+              <img src="./EP - Products List_files/ph05.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span>
+        </div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="-3" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd41.jpg">
+              <img src="./EP - Products List_files/pd41s.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span>
+        </div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="-2" aria-hidden="true" tabindex="-1"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph07.jpg">
+            <img src="./EP - Products List_files/ph07.jpg" alt="product name">
+          </picture>
+        </a></div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="-1" aria-hidden="true" tabindex="-1"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph10.jpg">
+            <img src="./EP - Products List_files/ph10.jpg" alt="product name">
+          </picture>
+        </a></div><div class="slick-slide" style="width: 210px;" data-slick-index="0" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd_tea02.jpg">
+              <img src="./EP - Products List_files/pd_tea02.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark v3D showLightbox" data-id="v3D-a"></span>
+          <span class="discountLabel">30</span>
+        </div><div class="slick-slide" style="width: 210px;" data-slick-index="1" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd_tea03.jpg">
+              <img src="./EP - Products List_files/pd_tea03.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark v360 showLightbox" data-id="v360-a"></span>
+          <span class="discountLabel">20</span>
+        </div><div class="slick-slide" style="width: 210px;" data-slick-index="2" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph05.jpg">
+              <img src="./EP - Products List_files/ph05.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span>
+        </div><div class="slick-slide slick-current slick-active" style="width: 210px;" data-slick-index="3" aria-hidden="false" tabindex="0">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="0">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd41.jpg">
+              <img src="./EP - Products List_files/pd41s.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span>
+        </div><div class="slick-slide slick-active" style="width: 210px;" data-slick-index="4" aria-hidden="false" tabindex="0"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="0">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph07.jpg">
+            <img src="./EP - Products List_files/ph07.jpg" alt="product name">
+          </picture>
+        </a></div><div class="slick-slide slick-active" style="width: 210px;" data-slick-index="5" aria-hidden="false" tabindex="0"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="0">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph10.jpg">
+            <img src="./EP - Products List_files/ph10.jpg" alt="product name">
+          </picture>
+        </a></div><div class="slick-slide slick-cloned slick-active" style="width: 210px;" data-slick-index="6" aria-hidden="false" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="0">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd_tea02.jpg">
+              <img src="./EP - Products List_files/pd_tea02.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark v3D showLightbox" data-id="v3D-a"></span>
+          <span class="discountLabel">30</span>
+        </div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="7" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd_tea03.jpg">
+              <img src="./EP - Products List_files/pd_tea03.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark v360 showLightbox" data-id="v360-a"></span>
+          <span class="discountLabel">20</span>
+        </div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="8" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph05.jpg">
+              <img src="./EP - Products List_files/ph05.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span>
+        </div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="9" aria-hidden="true" tabindex="-1">
+          <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd41.jpg">
+              <img src="./EP - Products List_files/pd41s.jpg" alt="product name">
+            </picture>
+          </a>
+          <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span>
+        </div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="10" aria-hidden="true" tabindex="-1"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph07.jpg">
+            <img src="./EP - Products List_files/ph07.jpg" alt="product name">
+          </picture>
+        </a></div><div class="slick-slide slick-cloned" style="width: 210px;" data-slick-index="11" aria-hidden="true" tabindex="-1"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html" tabindex="-1">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph10.jpg">
+            <img src="./EP - Products List_files/ph10.jpg" alt="product name">
+          </picture>
+        </a></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></section>
+
+    </aside>
+    <div class="major">
+  
+
+      <div class="displayOptions">
+        <span class="toggleCtrl">Filter &amp; Sort</span>
+        <div class="toggleSlide">
+          <div class="filterBy"><span class="label">Filter by</span>
+            <ul>
+              <li class="now">All</li>
+              <li>Sale</li>
+              <li>New</li>
+              <li>Featured</li>
+              <li>Free Shipping</li>
+              <li>Discount</li>
+            </ul>
+          </div>
+          <div class="sortBy"><span class="label">Sort by</span>
+            <select>
+              <option value="">Modification Time Old to New</option>
+              <option value="">Modification Time New to Old</option>
+              <option value="">Discount</option>
+              <option value="">Price: Low to High</option>
+              <option value="">Price: High to Low</option>
+              <option value="">Creation Time Old to New</option>
+              <option value="">Creation Time New to Old</option>
+            </select>
+          </div>
+        </div>
+        <div class="numberPerPage">Show
+          <select name="" id="">
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+          entries
+        </div>
+        <div class="displayMode">
+          <ul>
+            <li class="array now"></li>
+            <li class="stack"></li>
+          </ul>
+        <span class="invisibleCtrl"></span></div>
+      </div>
+
+      <section class="pdQueue exchangeView">
+        <ul class="list">
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd21.jpg">
+              <img src="./EP - Products List_files/pd21.jpg" alt="product name">
+            </picture>
+
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones</a></li>
+              <li><span class="dt">Model No.</span> Cinnamon Vinegar375ccCinnamonConcentrate375ccGiftSets</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">115.20</span>
+                <span class="discountPrice">105.50</span>
+              </li>
+              <li><span class="dt">Certification</span>SGS、CE 0434</li>
+              <!-- <li class="certifiMark">image \ image</li> -->
+            </ol>
+
+            <div class="bottom">
+              <span class="freeShippingLabel">Free shipping</span>
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+
+            <span class="viewMark v360 showLightbox" data-id="v360-a"></span><!-- 360度 -->
+            <span class="discountLabel">9</span>
+            <span class="labelNew">NEW</span>
+            <!-- <span class="labelFeatured">Featured</span> -->
+
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd22.jpg">
+              <img src="./EP - Products List_files/pd22.jpg" alt="product name">
+            </picture>
+            
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Excepteur Sint Occaecat Cupidatat non Proident - Sunt in Culpa Qui Officia Deserunt Mollit Aanim id Est Laborum Sagittis Pulvinar Consequat Elit</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span> 
+                <span class="oldPrice">8,888,888,888.00-9,999,999,999.00</span> 
+                <span class="discountPrice">8,088,888,888.08-9,099,999,999.09</span>
+              </li>
+              <li><span class="dt">Certification</span>ISO22000:2005, HACCP, ISO 9001 2008, HALAL, SGS, TUV, CE 0434, ISO, CAS ORGANIC, CNS, T-Mark</li>
+
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis active"></li>
+                <li class="addtoCart active"></li>
+              </ol>
+            </div>
+
+            <span class="viewMark v3D showLightbox" data-id="v3D-a"></span><!-- 3D -->
+            <span class="discountLabel">20</span>
+            <span class="labelNew">NEW</span>
+            
+
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd24.jpg">
+              <img src="./EP - Products List_files/pd24.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">999999999.20</span>
+                <span class="discountPrice">888888888.50</span>
+              </li>
+              <li><span class="dt">Certification</span> SGS、CE 0434</li>
+            </ol>
+
+            <div class="bottom">
+              <span class="freeShippingLabel">Free shipping</span>
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+            <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span><!-- video -->
+            
+
+          </li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd23.jpg">
+              <img src="./EP - Products List_files/pd23.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">115.20</span>
+                <span class="discountPrice">105.50</span>
+              </li>
+              <li><span class="dt">Certification</span> SGS、CE 0434</li>
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+          </li>
+
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph02.jpg">
+              <img src="./EP - Products List_files/ph02.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">115.20</span>
+                <span class="discountPrice">105.50</span>
+              </li>
+              <li><span class="dt">Certification</span> SGS、CE 0434</li>
+            </ol>
+
+            <div class="bottom">
+              <span class="freeShippingLabel">Free shipping</span>
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+          </li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph01.jpg">
+              <img src="./EP - Products List_files/ph01.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Ristique Nulla aliquet enim tortor at auctor urna</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="price">555.55</span>
+                </li>
+              <li><span class="dt">Certification</span> SGS、CE 0434</li>
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+
+          </li>
+        </ul>
+      </section>
+
+      <section class="page">
+        <p><em>1</em> to <em>10</em> out of <em>165</em></p>
+        <ul>
+          <li class="prev disabled"><a>previous</a></li>
+          <li class="here"><a>1</a></li>
+          <li class="ellipsis">...</li>
+          <li><a>3</a></li>
+          <li><a>4</a></li>
+          <li><a>5</a></li>
+          <li class="ellipsis">...</li>
+          <li><a>12</a></li>
+          <li class="next"><a>next</a></li>
+        </ul>
+      </section>
+
+      <!-- 以下為 Recommendations -->
+
+      <section class="pdQueue ckSlide"><h2>Recommendations</h2>
+        <div class="slideArea"><ul class="list">
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd11.jpg">
+              <img src="./EP - Products List_files/pd11.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+              </ol>
+            </div>
+            <span class="discountLabel">15</span>
+            <span class="labelNew">NEW</span>
+            
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd12.jpg">
+              <img src="./EP - Products List_files/pd12.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Qwer Tyuiop Asdfg Hjkllzxc mmmm</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            </ol>
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+              </ol>
+            </div>
+            <span class="discountLabel">25</span>
+            <!-- <span class="labelNew">NEW</span> -->
+            
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd15.jpg">
+              <img src="./EP - Products List_files/pd15.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Posuere Dolor sit amet consectetur adipiscing elit duis</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            </ol>
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+              </ol>
+            </div>
+            <span class="discountLabel">25</span>
+            <span class="labelNew">NEW</span>
+            
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd13.jpg">
+              <img src="./EP - Products List_files/pd13.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Mauris ultrices eros in cursus turpis massa tincidunt dui</a></li>
+              <li><span class="dt">Model No.</span> ZX-V12345678987654321</li>
+            </ol>            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd16.jpg">
+              <img src="./EP - Products List_files/pd16.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Excepteur sint occaecat cupidatat non proident</a></li>
+              <li><span class="dt">Model No.</span> ZX-V12345678987654321</li>
+            </ol>
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+              </ol>
+            </div>
+          </li>
+
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph02.jpg">
+              <img src="./EP - Products List_files/ph02.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            </ol>
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+              </ol>
+            </div>
+            <span class="labelNew">NEW</span>
+
+          </li>
+
+        </ul></div>
+      <span class="arrowLeft"></span><span class="arrowRight"></span></section>
+
+      <section class="pdQueue ckSlide"><h2>Small Order Recommendation</h2>
+        <div class="slideArea"><ul class="list">
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd21.jpg">
+              <img src="./EP - Products List_files/pd21.jpg" alt="product name">
+            </picture>
+
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span> 
+                <span class="oldPrice">8,888,888,888.00-9,999,999,999.00</span> 
+                <span class="discountPrice">8,088,888,888.08-9,099,999,999.09</span>
+              </li>
+            </ol>
+
+            <div class="bottom">
+              <span class="freeShippingLabel">Free shipping</span>
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+
+            <span class="discountLabel">30</span>
+            <span class="labelNew">NEW</span>
+            
+
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd22.jpg">
+              <img src="./EP - Products List_files/pd22.jpg" alt="product name">
+            </picture>
+            
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Excepteur Sint Occaecat Cupidatat non Proident - Sunt in Culpa Qui Officia Deserunt Mollit Aanim id Est Laborum Sagittis Pulvinar Consequat Elit</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">999999999.20</span>
+                <span class="discountPrice">888888888.50</span>
+              </li>
+
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis active"></li>
+                <li class="addtoCart active"></li>
+              </ol>
+            </div>
+
+            <span class="discountLabel">20</span>
+            <span class="labelNew">NEW</span>
+            
+
+          </li>
+          <li>
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd24.jpg">
+              <img src="./EP - Products List_files/pd24.jpg" alt="product name">
+            </picture>
+            <ol class="pdBriefInfo">
+              <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">115.20</span>
+                <span class="discountPrice">105.50</span>
+              </li>
+            </ol>
+
+            <div class="bottom">
+              <span class="freeShippingLabel">Free shipping</span>
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+            <span class="discountLabel">15</span>
+            
+
+          </li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/pd23.jpg">
+              <img src="./EP - Products List_files/pd23.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">115.20</span>
+                <span class="discountPrice">105.50</span>
+              </li>
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+          </li>
+
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph02.jpg">
+              <img src="./EP - Products List_files/ph02.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="oldPrice">115.20</span>
+                <span class="discountPrice">105.50</span>
+              </li>
+            </ol>
+
+            <div class="bottom">
+              <span class="freeShippingLabel">Free shipping</span>
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+          </li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./EP - Products List_files/ph01.jpg">
+              <img src="./EP - Products List_files/ph01.jpg" alt="product name">
+            </picture>
+            </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+              </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Ristique Nulla aliquet enim tortor at auctor urna</a></li>
+              <li><span class="dt">Model No.</span> AH-K9087654321</li>
+              <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+              <li class="priceSet">
+                <span class="currency">USD</span>
+                <span class="price">555.55</span>
+                </li>
+            </ol>
+
+            <div class="bottom">
+              <ol class="addTo">
+                <li class="likeThis"></li>
+                <li class="addtoCart"></li>
+              </ol>
+            </div>
+
+          </li>
+        </ul></div>
+      <span class="arrowLeft"></span><span class="arrowRight"></span></section>
+
+  
+    </div>
+
+  </div><!-- /.main -->
+
+
+<footer class="webFooter">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:info@anko.com.tw">info@anko.com.tw</a></p>
+      <p>Phone: <a href="tel:+886222888899">+886-2-2288-8899</a></p>
+      <button class="footer-btn">Contact Us</button>
+    </div>
+
+    <div class="footer-column emailUpdate">
+      <h3>Email Updates</h3>
+      <p>Interested in this store?</p>
+      <button type="submit" class="footer-btn">Subscribe</button>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/product-catalog/all-products.html">Latest Products</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/contact/supplier">Contact Us</a></li>
+        <li><a href="/newslist">News</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+  <h3>Follow Us</h3>
+  <div class="footer-subgroup">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/ANKOFoodMachine" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/facebook--v1.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/anko_food_machine/" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/instagram-new.png" alt="Instagram" />
+      </a>
+      <a href="https://www.youtube.com/channel/UC2cvUB50FbA9H5ru19KKMNw" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/youtube-play.png" alt="YouTube" />
+      </a>
+      <a href="https://www.linkedin.com/company/anko-food-machine" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/linkedin.png" alt="LinkedIn" />
+      </a>
+    </div>
+    <div class="qr-code-wrapper">
+      <img src="https://ankofood.en.taiwantrade.com/qrcode/w360h360/L/ankofood.en.taiwantrade.com.gif" alt="QR Code" class="qr-code">
+    </div>
+  </div>
+</div>
+
+</footer>
+
+
+
+
+<div class="footer-bottom">
+  <p>
+    <a href="https://www.taiwantrade.com/" target="_blank">Powered by
+      <img src="./EP - Products List_files/taiwantrade.com.png" alt="Taiwan Trade" class="tt-logo">
+    </a>
+    <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/sitemap.htm">Site Map</a>
+    © 2002–2020 TAITRA. All rights reserved.
+  </p>
+</div>
+
+
+
+
+</body></html>

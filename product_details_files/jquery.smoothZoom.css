@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* //20201210 modified for RWD
+.view_largeimg { width:630px;  margin:0 auto;}  
+.view_largeimg .title{ display:block;font-size:16px; font-weight:bold; line-height:1.5; margin:0 0 10px 0; height:55px;}
+.smooth_zoom_preloader{ background-image:url(../images/loading.gif) !important;}
+.smooth_zoom_icons {background-image: url(../images/icon/icons_view_large.png);}
+
+#zoom_container {overflow: hidden; width:630px; height:440px;}
+*/
+.zoom_thumbnails { display:block; margin: 0px; padding: 0px; list-style:none; text-align:center; height:66px;}
+
+.zoom_thumbnails li { display:inline-block; margin:0 -1px 5px 3px; width:56px; height:66px; vertical-align:top;}
+.zoom_thumbnails li a { display:table-cell;border:#c6c6c6 solid 1px; width:50px; height:50px; padding:2px; overflow:hidden; background:#fff; vertical-align:middle; text-align:center; outline:none; }
+@-moz-document url-prefix(){.zoom_thumbnails li a { height:56px; }}
+
+.zoom_thumbnails li a img { max-width:50px; max-height:50px; vertical-align:middle; border:none; }
+.zoom_thumbnails li a.current{ background-position:-840px -230px;padding:2px 2px 7px; height:52px; width:52px; border:none;}
+@-moz-document url-prefix(){.zoom_thumbnails li a.current { height:61px; }}
+
+*+html .zoom_thumbnails li {display:inline; zoom:1; margin-right:3px;}
+*+html .zoom_thumbnails li a { display:block; font-family:Arial; font-size: 44px;  noFocusLine: expression(this.onFocus=this.blur());}
+*+html .zoom_thumbnails li a.current{ padding-top:3px; padding-bottom:7px;} 
+
+
+/* 20201210 modified for RWD */
+.view_largeimg { margin:0 auto; 
+  width: calc(100% - 12px);
+  max-width: 630px;
+}
+.view_largeimg .title{ display:block;font-size:16px; font-weight:bold; line-height:1.5; margin:0 0 10px 0; height:55px;}
+.smooth_zoom_preloader{ background-image:url(../images/loading.gif);}/* 20201216 移除  !important */
+.smooth_zoom_icons {background-image: url(../images/icon/icons_view_large.png);}
+
+#zoom_container {overflow: hidden; 
+  margin:0 auto ;
+  width: 100% !important;
+  height:calc(96vw - 12px) !important;
+  box-shadow: #d6d6d6 0 0 0 1px;
+}
+#zoom_container>div:nth-child(3),
+#zoom_container>div:nth-child(4),
+#zoom_container>div:nth-child(5),
+#zoom_container>div:nth-child(6){ display: none;}
+
+
+@media screen and (min-width: 680px){
+  #zoom_container{height:630px !important;}
+}
+@media screen and (min-width: 1000px){
+  #zoom_container{height:480px !important;}
+}

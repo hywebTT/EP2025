@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>anko首頁</title>
+<link href="style.css" rel="stylesheet"/></head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hasChildLinks = document.querySelectorAll('.main-menu li.hasChild > a');
+
+    hasChildLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // 清除其他 active 狀態（如只允許一個展開）
+        hasChildLinks.forEach(other => {
+          if (other !== this) {
+            other.classList.remove('active');
+            other.nextElementSibling.classList.remove('show');
+          }
+        });
+
+        // 切換當前選單 active 和展開
+        this.classList.toggle('active');
+        const subMenu = this.nextElementSibling;
+        subMenu.classList.toggle('show');
+      });
+    });
+  });
+</script>
+
+<body>
+
+<!-- TopMenu 置頂無縫，與 logo/badge、主選單區塊緊密 -->
+<div class="topMenu-fixed">
+  <div class="topMenu-container">
+    <ul class="topMenu-list">
+      <li class="hasChild">
+        <a href="#">English <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">正體中文</a></li>
+          <li><a href="#">Español</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="headerFavoriteBtn">
+          <svg width="16" height="16" fill="#D4A017" viewBox="0 0 24 24" style="margin-right:5px; vertical-align:middle;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Add to favorites
+        </a>
+      </li>
+
+      <li class="hasChild">
+        <a href="#">USD <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">Change</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Sign In</a></li>
+
+      <li class="hasChild">
+        <a href="#">Favorites <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Supplier</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <svg width="16" height="16" fill="#D4A017" viewBox="0 0 24 24" style="margin-right:5px; vertical-align:middle;"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14h9.62c.76 0 1.44-.43 1.76-1.1l3.24-7.24A1 1 0 0 0 21 4H5.21L4.27 2.59A1 1 0 0 0 3.39 2H1v2h1.17l3.6 7.59-1.35 2.44A1.003 1.003 0 0 0 5.5 16h12v-2H7.16z"/></svg>
+          Items
+        </a>
+      </li>
+
+      <li class="ttLogo">
+        <a href="#">
+          <img src="images/taiwantrade.com.png" alt="Go to Taiwantrade" style="height: 26px; vertical-align: middle;">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  <!-- Logo 與徽章區塊 -->
+<header class="anko-header">
+<div class="logo-and-badges">
+  <div class="logo-title-group">
+    <img src="images/ANKO-Taiwan-Trade-180x100-100x100.png" class="anko-logo-big">
+    <span class="company-title">ANKO FOOD MACHINE CO., LTD.</span>
+  </div>
+
+  <!-- 中間搜尋區 -->
+  <div class="search-box">
+    <input type="text" placeholder="Search products..." class="search-input">
+    <button class="search-btn">Search</button>
+  </div>
+
+  <div class="badges">
+    <img src="images/icon-TaiwanTradeShows-100X100.png" alt="Trade Shows" class="badge-icon">
+    <img src="images/taiwan-excellence.png" alt="Taiwan Excellence" class="badge-icon">
+    <img src="images/year_label_23.png" alt="23th Year" class="badge-icon">
+    <img src="images/advanced_cert100X100.png" alt="Advanced Verified" class="badge-icon">
+  </div>
+</div>
+
+
+  <!-- 主選單 -->
+  <nav class="main-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="hasChild">
+        <a href="#">About Us</a>
+        <ul class="subMenu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Sales Service</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </li>
+      <li class="hasChild">
+        <a href="#">Products</a>
+        <ul class="subMenu">
+          <li><a href="#">Asian</a></li>
+          <li><a href="#">European</a></li>
+        </ul>
+      </li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Website</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<anko-four theme="anko-dark"></anko-four>
+<anko-twelve theme="anko-light"></anko-twelve>
+<anko-eight theme="anko-dark"></anko-eight>
+<anko-seven theme="anko-light"></anko-seven>
+<anko-five theme="anko-dark"></anko-five>
+<anko-eleven theme="anko-light"></anko-eleven>
+<anko-ten theme="anko-dark"></anko-ten>
+<script src="./anko-one.js"></script>
+<script src="./anko-two.js"></script>
+<script src="./anko-three.js"></script>
+<script src="./anko-four.js"></script>
+<script src="./anko-five.js"></script>
+<script src="./anko-six.js"></script>
+<script src="./anko-seven.js"></script>
+<script src="./anko-eight.js"></script>
+<script src="./anko-nine.js"></script>
+<script src="./anko-ten.js"></script>
+<script src="./anko-eleven.js"></script>
+<script src="./anko-twelve.js"></script>
+<form id="footerForm"></form>
+<section class="popMsg" id="subscribeBox" style="display: none;">
+<div class="popBody">
+<p>Would you like to add the supplier to your email alert?</p>
+</div>
+<div class="btnDv">
+<button class="closePop" type="submit">Submit</button>
+<button class="closePop" type="button">Cancel</button>
+</div>
+</section>
+<footer class="anko-footer" style="background-color: #111; color: #fff; padding: 40px 20px; font-family: sans-serif;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around; text-align: left;">
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+<h3 style="color: gold;">Contact Us</h3>
+<p>Email: <a href="mailto:info@anko.com.tw" style="color: #fff;">info@anko.com.tw</a></p>
+<p>Phone: <a href="tel:+886222888899" style="color: #fff;">+886-2-2288-8899</a></p>
+<button style="margin-top: 10px; padding: 8px 16px; background: gold; color: #111; border: none; border-radius: 4px;">Customer Service</button>
+</div>
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+<h3 style="color: gold;">Quick Links</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li><a href="/product-catalog/all-products.html" style="color: #fff;">Latest Products</a></li>
+<li><a href="/about-us" style="color: #fff;">About Us</a></li>
+<li><a href="/contact/supplier" style="color: #fff;">Contact Us</a></li>
+<li><a href="/newslist" style="color: #fff;">News</a></li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+<h3 style="color: gold;">Follow Us</h3>
+<div style="display: flex; gap: 10px; align-items: center;">
+<a href="https://www.facebook.com/ANKOFoodMachine" target="_blank"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png"/></a>
+<a href="https://www.instagram.com/anko_food_machine/" target="_blank"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png"/></a>
+<a href="https://www.youtube.com/channel/UC2cvUB50FbA9H5ru19KKMNw" target="_blank"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png"/></a>
+<a href="https://www.linkedin.com/company/anko-food-machine" target="_blank"><img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png"/></a>
+<img alt="QR Code" src="https://ankofood.en.taiwantrade.com/qrcode/w360h360/L/ankofood.en.taiwantrade.com.gif" style="height: 40px;"/>
+</div>
+</div>
+</div>
+<div style="text-align: center; margin-top: 30px; font-size: 14px; color: #bbb;">
+    © 2002-2025 ANKO FOOD MACHINE CO., LTD. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>

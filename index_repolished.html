@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>anko首頁</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Microsoft JhengHei', Arial, sans-serif;
+      background: #000;
+    }
+    anko-one,
+    anko-two,
+    anko-three,
+    anko-four,
+    anko-five,
+    anko-six,
+    anko-seven,
+    anko-eight,
+    anko-nine,
+    anko-ten,
+    anko-eleven,
+    anko-twelve
+    {
+      display: block;
+      margin-bottom: 0;
+    }
+  </style>
+
+<style>
+  .anko-header, .anko-footer {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 1.5rem 2rem;
+  }
+  .anko-header .container, .anko-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .anko-header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f9a825;
+    float: left;
+  }
+  .anko-header .nav {
+    float: right;
+  }
+  .anko-header .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  .anko-header .nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .anko-header .nav a:hover {
+    color: #f9a825;
+  }
+  .anko-footer {
+    background-color: #111;
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .footer-links a:hover {
+    color: #f9a825;
+  }
+  .footer-copy {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+<header class="anko-header">
+<div class="container">
+<div class="logo">ANKO</div>
+<nav class="nav">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<anko-four theme="anko-dark"></anko-four>
+<anko-twelve theme="anko-light"></anko-twelve>
+<anko-eight theme="anko-dark"></anko-eight>
+<anko-seven theme="anko-light"></anko-seven>
+<anko-five theme="anko-dark"></anko-five>
+<anko-eleven theme="anko-light"></anko-eleven>
+<anko-ten theme="anko-dark"></anko-ten>
+<script src="./anko-one.js"></script>
+<script src="./anko-two.js"></script>
+<script src="./anko-three.js"></script>
+<script src="./anko-four.js"></script>
+<script src="./anko-five.js"></script>
+<script src="./anko-six.js"></script>
+<script src="./anko-seven.js"></script>
+<script src="./anko-eight.js"></script>
+<script src="./anko-nine.js"></script>
+<script src="./anko-ten.js"></script>
+<script src="./anko-eleven.js"></script>
+<script src="./anko-twelve.js"></script>
+
+<footer class="anko-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>ANKO FOOD MACHINE CO., LTD.</h4>
+<p>Email: anko@anko.com.tw<br/>Tel: +886-2-2673-3798<br/>Address: Taiwan</p>
+</div>
+<div class="footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#">About</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-copy">© 2025 ANKO FOOD MACHINE CO., LTD. All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

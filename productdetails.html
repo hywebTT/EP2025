@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="emotion-insertion-point" content="">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EP - Products List</title>
+  <link href="./EP - Products List_files/css" rel="stylesheet">
+  <link rel="stylesheet" href="./EP - Products List_files/slick.css">
+  <link rel="stylesheet" href="./EP - Products List_files/styleB.css">
+  <link rel="stylesheet" href="style.css" >
+  <script src="./EP - Products List_files/jquery-3.4.1.min.js"></script>
+  <script src="./EP - Products List_files/slick.min.js"></script>
+  <script src="./EP - Products List_files/jquery.touchSwipe.min.js"></script>
+  <script src="./EP - Products List_files/rwdTable.js"></script>
+  <script src="./EP - Products List_files/basic.js"></script>
+  <script src="./EP - Products List_files/basic-4-implements.js"></script>
+  <style>
+
+
+  <!-- 產品放大圖套件的 css -->
+  <link rel="stylesheet" type="text/css" href="./product_details_files/jquery.smoothZoom.css">
+  <style>
+  .webFooter {
+    background: linear-gradient(to bottom right, #1a1a1a, #333);
+    color: white;
+    padding: 40px 20px 10px;
+    font-family: Arial, sans-serif;
+  }
+
+  .webFooter .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .webFooter .footer-column,
+  .webFooter .emailUpdate {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+
+  .webFooter h3 {
+    color: #FFD700;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .webFooter a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .webFooter a:hover {
+    text-decoration: underline;
+  }
+
+  .webFooter .footer-btn {
+    background-color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .webFooter .footer-btn:hover {
+    background-color: #ffcc00;
+  }
+
+  .webFooter .social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background: white;
+    border-radius: 50%;
+    padding: 3px;
+  }
+
+  .webFooter .qr-code {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .webFooter > p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .webFooter > p img {
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+</style>
+</head>
+
+  <body style="">
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>anko首頁</title>
+<link href="style.css" rel="stylesheet"/></head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hasChildLinks = document.querySelectorAll('.main-menu li.hasChild > a');
+
+    hasChildLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // 清除其他 active 狀態（如只允許一個展開）
+        hasChildLinks.forEach(other => {
+          if (other !== this) {
+            other.classList.remove('active');
+            other.nextElementSibling.classList.remove('show');
+          }
+        });
+
+        // 切換當前選單 active 和展開
+        this.classList.toggle('active');
+        const subMenu = this.nextElementSibling;
+        subMenu.classList.toggle('show');
+      });
+    });
+  });
+</script>
+ <!-- TopMenu 置頂無縫，與 logo/badge、主選單區塊緊密 -->
+<div class="topMenu-fixed">
+  <div class="topMenu-container">
+    <ul class="topMenu-list">
+      <li class="hasChild">
+        <a href="#">English <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">正體中文</a></li>
+          <li><a href="#">Español</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="headerFavoriteBtn">
+          <svg width="16" height="16" fill="#D4A017" viewBox="0 0 24 24" style="margin-right:5px; vertical-align:middle;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Add to favorites
+        </a>
+      </li>
+
+      <li class="hasChild">
+        <a href="#">USD <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">Change</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Sign In</a></li>
+
+      <li class="hasChild">
+        <a href="#">Favorites <span class="arrow">▼</span></a>
+        <ul class="subMenu">
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Supplier</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <svg width="16" height="16" fill="#D4A017" viewBox="0 0 24 24" style="margin-right:5px; vertical-align:middle;"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14h9.62c.76 0 1.44-.43 1.76-1.1l3.24-7.24A1 1 0 0 0 21 4H5.21L4.27 2.59A1 1 0 0 0 3.39 2H1v2h1.17l3.6 7.59-1.35 2.44A1.003 1.003 0 0 0 5.5 16h12v-2H7.16z"/></svg>
+          Items
+        </a>
+      </li>
+
+      <li class="ttLogo">
+        <a href="#">
+          <img src="images/taiwantrade.com.png" alt="Go to Taiwantrade" style="height: 26px; vertical-align: middle;">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  <!-- Logo 與徽章區塊 -->
+<header class="anko-header">
+<div class="logo-and-badges">
+  <div class="logo-title-group">
+    <img src="images/ANKO-Taiwan-Trade-180x100-100x100.png" class="anko-logo-big">
+    <span class="company-title">ANKO FOOD MACHINE CO., LTD.</span>
+  </div>
+
+  <!-- 中間搜尋區 -->
+ 
+<div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-icon">🔍</button>
+  </div>
+
+
+
+  <div class="badges">
+    <img src="images/icon-TaiwanTradeShows-100X100.png" alt="Trade Shows" class="badge-icon">
+    <img src="images/taiwan-excellence.png" alt="Taiwan Excellence" class="badge-icon">
+    <img src="images/year_label_23.png" alt="23th Year" class="badge-icon">
+    <img src="images/advanced_cert100X100.png" alt="Advanced Verified" class="badge-icon">
+  </div>
+</div>
+
+
+  <!-- 主選單 -->
+  <nav class="main-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="hasChild">
+        <a href="#">About Us</a>
+        <ul class="subMenu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Sales Service</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </li>
+      <li class="hasChild">
+        <a href="#">Products</a>
+        <ul class="subMenu">
+          <li><a href="#">Asian</a></li>
+          <li><a href="#">European</a></li>
+        </ul>
+      </li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Website</a></li>
+    </ul>
+  </nav>
+<style>
+  .webFooter {
+    background: linear-gradient(to bottom right, #1a1a1a, #333);
+    color: white;
+    padding: 40px 20px 10px;
+    font-family: Arial, sans-serif;
+  }
+
+  .webFooter .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .webFooter .footer-column,
+  .webFooter .emailUpdate {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+
+  .webFooter h3 {
+    color: #FFD700;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .webFooter a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .webFooter a:hover {
+    text-decoration: underline;
+  }
+
+  .webFooter .footer-btn {
+    background-color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .webFooter .footer-btn:hover {
+    background-color: #ffcc00;
+  }
+
+  .webFooter .social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background: white;
+    border-radius: 50%;
+    padding: 3px;
+  }
+
+  .webFooter .qr-code {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .webFooter > p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .webFooter > p img {
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+</style>
+</header>
+
+
+
+    
+ <!-- ./topZone -->
+
+  <nav class="path">
+    <ul>
+      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/home.html">Home</a></li>
+      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Products</a></li>
+      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Wireless</a></li>
+      <li>2.4 GHz</li>
+    </ul>
+  </nav>
+  
+  <div class="main">
+    <div class="navBack"><a href="javascript:history.back()">Back</a></div>
+    <section class="pageHeader">
+      <h2>Products</h2>
+    </section>
+
+
+    <section class="thisProduct">
+
+      <section class="pdDisplay">
+
+        <div class="pdPhotoShow slick-initialized slick-slider">
+          <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 5000px;"><div class="image slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd31.jpg">
+              <img src="./product_details_files/pd31s.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -500px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/ph10.jpg">
+              <img src="./product_details_files/ph10.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -1000px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/ph04.jpg">
+              <img src="./product_details_files/ph04.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide slick-current slick-active" data-slick-index="3" aria-hidden="false" tabindex="0" style="width: 500px; position: relative; left: -1500px; top: 0px; z-index: 999; opacity: 1;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd34.jpg">
+              <img src="./product_details_files/pd34.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -2000px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd35.jpg">
+              <img src="./product_details_files/pd35.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -2500px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd36.jpg">
+              <img src="./product_details_files/pd36.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -3000px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd01.jpg">
+              <img src="./product_details_files/pd01.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -3500px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd02.jpg">
+              <img src="./product_details_files/pd02.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -4000px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd03.jpg">
+              <img src="./product_details_files/pd03.jpg" alt="product name">
+            </picture>
+          </div><div class="image slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 500px; position: relative; left: -4500px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms;">
+            <picture class="pdImg">
+              <source media="(min-width:1000px)" srcset="./product_details_files/pd04.jpg">
+              <img src="./product_details_files/pd04.jpg" alt="product name">
+            </picture>
+          </div></div></div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        <span class="enlarge showLightbox" data-id="imgEnlarge"><a>Enlarge</a></span>
+        <div class="pdPhotoNav slick-initialized slick-slider"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
+          <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3000px; transform: translate3d(-875px, 0px, 0px);"><div class="image slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd01.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd02.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd03.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd04.jpg" alt="product name"></div><div class="image slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd31s.jpg" alt="product name"></div><div class="image slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/ph10.jpg" alt="product name"></div><div class="image slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/ph04.jpg" alt="product name"></div><div class="image slick-slide slick-current slick-active" data-slick-index="3" aria-hidden="false" tabindex="0" style="width: 123px;"><img src="./product_details_files/pd34.jpg" alt="product name"></div><div class="image slick-slide slick-active" data-slick-index="4" aria-hidden="false" tabindex="0" style="width: 123px;"><img src="./product_details_files/pd35.jpg" alt="product name"></div><div class="image slick-slide slick-active" data-slick-index="5" aria-hidden="false" tabindex="0" style="width: 123px;"><img src="./product_details_files/pd36.jpg" alt="product name"></div><div class="image slick-slide slick-active" data-slick-index="6" aria-hidden="false" tabindex="0" style="width: 123px;"><img src="./product_details_files/pd01.jpg" alt="product name"></div><div class="image slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd02.jpg" alt="product name"></div><div class="image slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd03.jpg" alt="product name"></div><div class="image slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd04.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd31s.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/ph10.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/ph04.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd34.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd35.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd36.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="16" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd01.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="17" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd02.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="18" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd03.jpg" alt="product name"></div><div class="image slick-slide slick-cloned" data-slick-index="19" aria-hidden="true" tabindex="-1" style="width: 123px;"><img src="./product_details_files/pd04.jpg" alt="product name"></div></div></div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></div>
+
+        <span class="discountLabel">30</span>
+        <span class="labelNew">NEW</span>
+
+
+        <div class="viewIcons">
+          <ul>
+            <li class="view3D"><a></a></li>
+            <li class="view360 showLightbox" data-id="v360-a"><a></a></li>
+            <li class="viewVideo"><a></a></li>
+          </ul>
+        </div>
+
+        
+<div class="share"><span class="label">Share to</span> <div class="shareproduct"><div class="a2a_kit a2a_default_style"><a class="a2a_button_facebook" style="cursor: pointer;"><img src="https://cs01.itaiwantrade.com/static/facebook.svg" border="0" alt="facebook" width="27" height="27" style="background-color: royalblue;"></a> <a class="a2a_button_twitter" style="cursor: pointer;"><img src="https://cs01.itaiwantrade.com/static/twitter.svg" border="0" alt="twitter" width="27" height="27" style="background-color: rgba(0, 0, 0, 0);"></a> <a class="a2a_button_plurk" style="cursor: pointer;"><img src="https://cs01.itaiwantrade.com/static/plurk.svg" border="0" alt="plurk" width="27" height="27" style="background-color: rgb(207, 104, 47);"></a> <a class="a2a_button_linkedin" style="cursor: pointer;"><img src="https://cs01.itaiwantrade.com/static/linkedin.svg" border="0" alt="linkedin" width="27" height="27" style="background-color: rgb(0, 123, 181);"></a></div></div></div>
+      </section>
+
+      <section class="pdDeatils">
+        <div class="labels">
+          <!-- <span class="discountLabel">30</span> 移到 .pdDisplay 20201015-->
+
+          <span class="labelExpiredays">11h:00m:26s</span>
+          <!-- 其他格式如下  20201015
+          <span class="labelExpiredays">34 Days Left</span>
+          <span class="labelExpiredays">38m:26s</span>
+          <span class="labelExpiredays">26s</span>
+         -->
+          <span class="freeShippingLabel">Free shipping</span>
+          <!-- <span class="labelNew">NEW</span> 移到 .pdDisplay 20201015 -->
+          <!-- <span class="labelFeatured"></span> 移到產品名稱之前 20201015-->
+        </div>
+        <!-- <div class="pdName"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</div> -->
+        <div class="pdName">ANKO EMP-3000 Empanada Making Machine</div>
+
+        <div class="dataTb noBorder ">
+          <table>
+            <tbody><tr>
+              <th>Model No</th>
+              <!-- <td>RFD-975W/RFD-877W/RFD-975W/RFD-975W/RFD-877W/9999999/88888/77777777777777777777777777777777777777777777</td> -->
+              <td>EMP-3000</td>
+            </tr>
+            <tr>
+              <th>Made in</th>
+              <td>Japan</td>
+            </tr>
+            <tr>
+              <th>Mini Order</th>
+              <td>2 Pieses</td>
+            </tr>
+            <tr>
+              <th>Unit Price</th>
+              <td><span class="oldPrice"><span class="currency">USD</span>1,123.00 - 1,888.00</span> </td>
+            </tr>
+            <tr>
+              <th>Discount Price</th>
+              <td><span class="discountPrice">1,055.45 - 32,903.60</span> /(Pieses) </td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td>
+                <div class="hrScrollArea">
+                  <table class="priceList">
+                    <tbody><tr><th>Quantity</th><th>Price</th><th>Processing time</th></tr>
+                    <tr><td>1-9</td><td>USD 3,333.00</td><td>2 days</td></tr>
+                    <tr><td>10-50</td><td>USD 2,222,222.00</td><td>7 days</td></tr>
+                  </tbody></table>
+                </div>
+              </td>
+            </tr>
+          
+          </tbody></table>
+        </div>
+
+        <div class="toggleSlide">
+          <div class="toggleCtrl">Choose your specifications</div>
+          <div class="toggleArea">
+            <table class="formLayout">
+              <tbody><tr>
+                <td>Color and Pattern</td>
+                <td>
+                  <select name="" id="">
+                    <option value="">Please Select</option>
+                    <option value="">CORAL</option>
+                    <option value="">Navy</option>
+                    <option value="">Chocolate</option>
+                    <option value="">Sandy Brown</option>
+                    <option value="">White Smoke</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Colors_And_Patternsssss</td>
+                <td>
+                  <select name="" id="">
+                    <option value="">Please Select</option>
+                    <option value="">Chocolate</option>
+                    <option value="">Sandy Brown</option>
+                    <option value="">White Smoke</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Size</td>
+                <td>
+                  <select>
+                    <option value="">Small</option>
+                    <option value="">Medium</option>
+                    <option value="">Large</option>
+                    <option value="">X-Large</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Quantity</td>
+                <td>
+                  <div class="quantityInput"><span class="decrease"></span><input type="number" min="0"><span class="increase"></span></div> 
+                  <p>10 pieses available</p> 
+                </td>
+              </tr>
+              <tr>
+                <td>Total Price</td>
+                <td><span class="totalPrice"><span class="currency">USD</span> 18,222,222,22044</span> </td>
+              </tr>
+              <tr class="payment">
+                <td>Payment</td>
+                <td>
+                  <ul class="paymentIcons">
+                    <li><img src="./product_details_files/paypal.png" alt="PayPal"></li>
+                    <li><img src="./product_details_files/card.png" alt="credit card"></li>
+                    <li><img src="./product_details_files/alipay.png" alt="Alipay"></li>
+                    <li><img src="./product_details_files/tenpay.png" alt="Tenpay"></li>
+                    
+                    <li><img src="./product_details_files/ae.png" alt="American Express"></li>
+                    <li><img src="./product_details_files/unionpay.png" alt="UnionPay"></li>
+                    <li><img src="./product_details_files/applepay.png" alt="Apple Pay"></li>
+                    <li><img src="./product_details_files/googlepay.png" alt="Google Pay"></li>
+
+                  </ul>
+                  <p class="morePayment">We also supports <em> L/C, TT </em> for offline orders.</p>
+                </td>
+              </tr>
+            </tbody></table>
+            <div class="actions">
+              <ul class="buttons">
+                <li class="rfq"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">Request for Quotation</a></li>
+                <li class="buy trigPop" id="pop-msg000"><a>Buy Now</a></li>
+                <li class="contSu"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">Contact Supplier</a></li>
+              </ul>
+              
+              <ul class="addTo">
+                <li class="addtoCart">Add to cart</li>
+                <li class="likeThis">Add to Favorites</li>
+              </ul>
+<!-- 客戶長官說要移除 
+              <ul class="contactSuBy">
+                <li><a href="#"><img src="../images/icon_id_line.png" alt="Line"></a></li>
+                <li><a href="#"><img src="../images/icon_id_QQ.png" alt="QQ"></a></li>
+                <li><a href="#"><img src="../images/icon_id_wechat.png" alt="WeChat"></a></li>
+                <li><a href="#"><img src="../images/icon_id_whatsapp.png" alt="whatsApp"></a></li>
+                <li><a href="#"><img src="../images/icon_id_messenger.png" alt="Messenger"></a></li>
+              </ul> 
+-->
+
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
+
+    </section><!-- /.thisProduct -->
+
+
+    <div class="tabGroup" id="tabGroup">
+      <div class="tabItems">
+        <ul>
+          <li class="active"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#tabGroup">Product Details</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#tabGroup">Shipping &amp; Packaging</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#tabGroup">Payment Terms</a></li>
+          <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#tabGroup">Return Policy</a></li>
+        </ul>
+      </div>
+      <div class="tabContainer">
+        <div class="tabContent thisPdDetails show" style="display: block;"><h3 class="tabHead active">Product Details</h3>
+          <div class="tabBody">
+
+            <div class="MITorDIT">
+              <img src="./product_details_files/MIC_logo.png" alt="Made in Taiwan">
+              <!-- <img src="../images/DIC_logo.png" alt="Designed in Taiwan"> -->
+            </div>
+
+            <p class="slogan">The choice of a new generation.（廣告標語）</p>
+  
+            <div class="toggleSlide"><h4 class="toggleCtrl closeIt">Key Features</h4>
+              <div class="toggleArea">
+                <!-- ＊＊＊產品型錄樣板＊＊＊ -->
+                <!-- pFeatStyle01 111111111 -->
+                <section class="pFeatStyle01">
+                  <div class="headerText">Product Features Style01</div>
+                  <div class="twoBlocks">
+                    <div class="block">
+                      <span class="leadingImg"><img src="./product_details_files/companyLogo0.png" alt=""></span>
+                      <div class="blockTitle">Condimentum</div>
+                      <article>Amet luctus venenatis lectus magna fringilla urna. Tortor at auctor urna nunc id cursus metus. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Enim nec dui nunc mattis.</article>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                    <div class="block">
+                      <span class="leadingImg"><img src="./product_details_files/icon.png" alt=""></span>
+                      <div class="blockTitle">Interdum Varius Sit Pretium Nibh Ipsum</div>
+                      <article>Vestibulum lorem sed risus ultricies tristique nulla aliquet. <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">Arcu non odio</a> euismod lacinia at quis risus. Venenatis cras sed felis eget velit aliquet. Eu feugiat pretium nibh ipsum consequat nisl vel pretium.</article>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- pFeatStyle02 222222222 -->
+                <section class="pFeatStyle02">
+                  <div class="headerText">Product Features Style02</div>
+                  <article>Aenean vel elit scelerisque mauris pellentesque pulvinar. Volutpat blandit aliquam etiam erat velit scelerisque in dictum non. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Vulputate eu scelerisque felis imperdiet proin fermentum leo.</article>
+                  <div class="twoBlocks">
+                    <div class="image">
+                      <img src="./product_details_files/ph14.jpg" alt="">
+                    </div>
+                    <div class="block">
+                      <div class="blockTitle">Features</div>
+                      <article>Sit amet venenatis urna cursus eget nunc scelerisque. Senectus et netus et malesuada fames ac. Nec dui nunc mattis enim ut tellus elementum. Accumsan volutpat est velit. Nec feugiat in fermentum  semper. Adipiscing vitae proin sagittis nisl rhoncus. Fames ac turpis egestas sed tempus urna et pharetra pharetra. Fermentum dui faucibus in ornare quam viverra.</article>
+                      <!-- <div class="buttons">
+                        <span class="linkBtn"><a href="">Link Text 1</a></span>
+                        <span class="linkBtn"><a href="">Link Text Text Text 2</a></span>
+                      </div> -->
+                      <div class="buttons">
+                        <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Link Text 1</a>
+                        <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Link Text 2</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- pFeatStyle03 333333333 -->
+                <section class="pFeatStyle03">
+                  <div class="image">
+                    <img src="./product_details_files/pd41.jpg" alt="">
+                  </div>
+                  <div class="headerText">Product Features Style03</div>
+                  <article>Amet luctus venenatis lectus magna fringilla urna. Tortor at auctor urna nunc id cursus metus. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Enim nec dui nunc mattis.Vestibulum lorem sed risus ultricies tristique nulla aliquet. 
+                  Arcu non odio euismod lacinia at quis risus. Venenatis cras sed felis eget velit aliquet. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. Turpis cursus in hac habitasse. Sapien eget mi proin sed libero enim sed faucibus.   Condimentum id venenatis a condimentum vitae. Proin fermentum leo vel orci porta non pulvinar.
+
+                  </article>
+                  <div class="twoBlocks">
+                    <div class="block">
+                      <div class="blockTitle">Feature 1</div>
+                      <article>Odio euismod lacinia at quis risus sed vulputate odio. Vel orci porta non pulvinar neque laoreet. Mollis nunc sed id semper risus in hendrerit. Interdum varius sit amet mattis vulputate enim nulla.</article>
+                      <div class="linkBtn"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                    <div class="block">
+                      <div class="blockTitle">Feature 2</div>
+                      <article>Sed cras ornare arcu dui vivamus arcu felis bibendum. Varius sit amet mattis vulputate enim nulla aliquet porttitor lacus.</article>
+                      <div class="linkBtn"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                  </div>
+                </section>
+                
+                <!-- pFeatStyle04 444444444 -->
+                <section class="pFeatStyle04">
+                  <div class="headerText">Product Features Style04</div>
+                  <div class="sixBolcks">
+                    <div class="block"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                      <div class="blockTitle">Feature 1</div>
+                      <article>Donec massa sapien faucibus et molestie. Tempor id eu nisl nunc mi ipsum faucibus. Enim praesent elementum facilisis leo vel fringilla est.</article>
+                    </a></div>
+                    <div class="block"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                      <div class="blockTitle">Feature 2</div>
+                      <article>Neque viverra justo nec ultrices dui sapien eget mi. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Duis at consectetur lorem donec massa sapien. Eu augue ut lectus arcu. Tellus in metus fermentum.</article>
+                    </a></div>
+                    <div class="block"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                      <div class="blockTitle">Feature 3</div>
+                      <article>Urna condimentum mattis pellentesque id nibh tortor id aliquet. Praesent tristique magna sit amet. Viverra suspendisse potenti nullam ac tortor. Et netus et malesuada fames ac turpis egestas integer.</article>
+                    </a></div>
+                    <div class="block"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                      <div class="blockTitle">Feature 4</div>
+                      <article>Posuere urna nec tincidunt praesent semper feugiat. Suspendisse sed nisi lacus sed viverra tellus. Ut sem nulla pharetra diam sit. Lacus luctus accumsan tortor posuere. Enim nec dui nunc mattis enim ut. Id cursus eleifend sollicitudin.</article>
+                    </a></div>
+                    <div class="block"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                      <div class="blockTitle">Feature 5</div>
+                      <article>Proin nibh nisl condimentum id venenatis. Augue neque gravida in fermentum et. Tortor id aliquet lectus proin nibh nisl. Senectus et netus et malesuada.</article>
+                    </a></div>
+                    <div class="block"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                      <div class="blockTitle">Feature 6</div>
+                      <article>Felis bibendum ut tristique et egestas quis ipsum suspendisse. Eu mi bibendum neque egestas.</article>
+                    </a></div>
+                  </div>
+                </section>
+
+                <!-- pFeatStyle04 5555555555 -->
+                <section class="pFeatStyle05">
+                  <div class="headerText">Product Features Style05</div>
+                  <div class="threeBlocks">
+                    <div class="block">
+                      <div class="blockTitle">Feature 1</div>
+                      <div class="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                    <div class="block">
+                      <div class="blockTitle">Feature 2</div>
+                      <div class="body">Neque viverra justo nec ultrices dui sapien eget mi. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Pretium vulputate sapien nec sagittis.</div>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                    <div class="block">
+                      <div class="blockTitle">Feature 3</div>
+                      <div class="body">Viverra suspendisse potenti nullam ac tortor. Et netus et malesuada fames turpis egestas integer. Bibendum arcu vitae elementum curabitur vitae dignissim. Dictum non consectetur a erat.</div>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- pFeatStyle04 6666666666 -->
+                <section class="pFeatStyle06">
+                  <div class="headerText">Product Features Style06</div>
+                  <article>Justo donec enim diam vulputate ut pharetra sit amet. Vel fringilla est ullamcorper eget nulla facilisi etiam. Convallis tellus id interdum velit laoreet id donec ultrices. Scelerisque mauris pellentesque pulvinar pellentesque habitant. Risus sed vulputate odio ut enim blandit. Posuere urna nec tincidunt praesent semper feugiat. Suspendisse sed nisi lacus sed viverra tellus. Ut sem nulla pharetra diam sit. Sed cras ornare arcu dui vivamus arcu felis bibendum. Varius sit amet mattis vulputate enim nulla aliquet porttitor lacus.</article>
+                  <div class="threeBlocks">
+                    <div class="block">
+                      <div class="blockTitle">Feature One</div>
+                      <div class="image"><img src="./product_details_files/ph15.jpg"></div>
+                      <article>Donec massa sapien faucibus et molestie. Tempor id eu nisl nunc mi ipsum faucibus. Enim praesent elementum facilisis leo vel fringilla est.</article>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                    <div class="block">
+                      <div class="blockTitle">Feature Two</div>
+                      <div class="image"><img src="./product_details_files/ph10.jpg"></div>
+                      <article>Neque viverra justo nec ultrices dui sapien eget mi. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </article>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                    <div class="block">
+                      <div class="blockTitle">Feature Three</div>
+                      <div class="image"><img src="./product_details_files/ph17.jpg"></div>
+                      <article>Urna condimentum mattis pellentesque id nibh tortor id aliquet. Praesent tristique magna sit amet.</article>
+                      <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- pFeatStyle04 7777777777 -->
+                <section class="pFeatStyle07">
+                  <div class="headerText">Product Features Style07</div>
+                  <div class="eightBlocks">
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/avatar5.png"></div>
+                        <div class="blockTitle">Feature One</div>
+                        <article>Donec massa sapien faucibus et molestie. Tempor id eu nisl nunc mi ipsum faucibus</article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">
+                        <div class="image round"><img src="./product_details_files/ph16.jpg"></div>
+                        <div class="blockTitle">Feature Two</div>
+                        <article>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/ph05.jpg"></div>
+                        <div class="blockTitle">Feature Three</div>
+                        <article>Urna condimentum mattis pellentesque id nibh tortor id aliquet.</article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/ph11.jpg"></div>
+                        <div class="blockTitle">Feature Four</div>
+                        <article>Risus feugiat in ante metus dictum at tempor commodo.</article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/news02.jpg"></div>
+                        <div class="blockTitle">Feature Five</div>
+                        <article>Enim nulla aliquet porttitor lacus luctus accumsan tortor. </article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/news04.jpg"></div>
+                        <div class="blockTitle">Feature Six</div>
+                        <article>Nibh sed pulvinar proin gravida hendrerit lectus. Sed libero enim sed faucibus turpis in.</article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/news03.jpg"></div>
+                        <div class="blockTitle">Feature Seven</div>
+                        <article>nteger feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Blandit cursus risus at ultrices mi tempus. Feugiat scelerisque varius morbi enim nunc. </article>
+                      </a>
+                    </div>
+                    <div class="block">
+                      <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">
+                        <div class="image round"><img src="./product_details_files/news01.jpg"></div>
+                        <div class="blockTitle">Feature Eight</div>
+                        <article>Urna condimentum mattis pellentesque id nibh tortor id aliquet. Praesent tristique magna sit amet.</article>
+                      </a>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- pFeatStyle04 8888888888 -->
+                <section class="pFeatStyle08">
+                  <div class="leftSet">
+                    <div class="headerText">Product Features Style08</div>
+                    <article>Odio eu feugiat pretium nibh ipsum. Ullamcorper sit amet risus nullam eget felis eget nunc. Amet consectetur adipiscing elit duis tristique sollicitudin. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque.</article>
+                    <div class="link"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html">Learn More</a></div>
+                    <div class="subTitle">Links and read more</div>
+                    <ul class="icons">
+                      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#"><img src="./product_details_files/ph15.jpg" alt=""></a></li>
+                      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#"><img src="./product_details_files/avatar5.png" alt=""></a></li>
+                      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#"><img src="./product_details_files/ph13.jpg" alt=""></a></li>
+                      <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#"><img src="./product_details_files/ph_photo3.jpg" alt=""></a></li>
+                    </ul>
+                  </div>
+                  <div class="image"><img src="./product_details_files/ph07.jpg"></div>
+                </section>
+
+                <p>＊＊＊ ＊＊＊ ＊＊＊ 產品型錄樣板結束 ＊＊＊ ＊＊＊ ＊＊＊</p>
+
+
+
+                <article class="keyFeatures">
+                  <!-- 使用者用html editor 編輯出來的 code -->
+                  <p>＊＊＊佳淇的測試</p>
+                  <p>新版插入文件：<a class="fr-file" href="http://file01.xlsx/" target="_blank">自定義產品分類_147927.xlsx</a></p>
+                  <div>舊版插入文件：<a class="fr-file" href="http://sample.pdf/" target="_blank">檔案連結後面本來有一個不能正常顯示的FontAwesome圖示.pdf</a></div>
+                  <p>＊＊＊ ＊＊＊ ＊＊＊ 測試結束 ＊＊＊ ＊＊＊ ＊＊＊ </p>
+
+                  <table style="border:undefined;">
+                    <tbody>
+                      <tr>
+                        <td style="text-align:right; width:365px;"><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">表格測試：</span></strong></span></td>
+                        <td style="width:365px;"><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">1000 package / packages</span></strong></span></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;"><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">Payment Terms：</span></strong></span></td>
+                        <td><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">T/T</span></strong></span></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;"><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">Usage：</span></strong></span></td>
+                        <td><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">Car &amp; Motor &amp; Bike Tires</span></strong></span></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;"><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">Pressure：</span></strong></span></td>
+                        <td><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">High</span></strong></span></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;"><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">Warranty：</span></strong></span></td>
+                        <td><span style="color:#0b217e;"><strong><span style="font-family:Tahoma,Geneva,sans-serif;">4 Years</span></strong></span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+                  
+                  <p>&nbsp; <img src="./product_details_files/TAIRCHU-Cutlery.jpg" alt="Plastic Cutlery Supplier" class="fr-fic fr-dii" style="width: 750px;"></p>
+                  <div><div style="font-size: 13.3333px;"><a href="https://bit.ly/2zHPgBX" rel="noopener noreferrer" target="_blank"><img src="./product_details_files/tc-8337-plastic-food-box-meal-container-for-plating.jpg" data-id="froala_21_28_15" class="fr-fic fr-dib"></a></div><div style="font-size: 13.3333px;"><br></div><div style="font-size: 13.3333px;"><span style="line-height: 21px; color: #808080; font-size: 14px;">With more than 30 years in plastic tableware industry, Tair Chu has been continuously accumulating experience in <a href="https://www.cutleryfestival.com/categoryA0102/category-3F-7" rel="noopener noreferrer" target="_blank" title="Plastic Fork">plastic fork&nbsp;</a> and disposable spoons manufacturing. To meet HACCP,ISO22000,and NSF requirements, we further relocate our plant and &nbsp;build cleanroom in 2014 to produce highest quality plastic cutlery for the global market. As a leader in the <a href="https://www.cutleryfestival.com/categoryA01/categoryA-2F-27" rel="noopener noreferrer" target="_blank" title="plastic cutlery">plastic cutlery</a> industry, we keep improving in cutlery design, tooling development and manufacturing flow to distinguish our product from others. Our Plastic Spoon product line includes small dessert plastic spoon series, hot food friendly spoon series, heart shaped spoon series, and plastic ice cream spoon etc. We are pleased to provide the best and most professional services. Please contact us if any.</span></div></div>
+
+                  <!--end of: 使用者用 html editor 編輯出來的 code -->
+
+
+                  <p>PRODUCT NAME: <br> ALTEAM RFD-877W Wireless USB 2.4GHz Gaming Headset Headphone with Mic Volume Control, 15M, 8 Hours, Lossless High Fidelity Lag Free, Bass for Computer PC PS4 Playstation 4 Xbox, Mac, Laptop, Windows</p>
+                  <p>PRODUCT FEATURES: </p> 
+                  <p>
+                    【LOW LATENCY WIRELESS TECH】Low-latency 2.4GHz Digital Wireless game headset allows you to operate the headphones at a distance of 39 ft (12m) from the transmitter and feel free to move around while playing games, listen to music or chat with teammates.
+                  </p>
+                  <p>【QUICK ACTION CONTROLS】Adjust mic and volume levels and mute directly by pressing the button on earcup, users can stay focused on your game.</p>
+                  <p>【HIGH DEFINITION MICROPHONE】Uni-directional aluminum boom microphone reduces ambient noise and accurately pick up voice for clear communication. Snake tube design allows users to easily adjust the angle of microphone according to their preference.</p>
+                  <p>【COMFORTABLE TO WEAR】Adjustable headband fits different size heads. The soft pads in the earcups reduce fatigue while wearing these headphones as well as create sound isolation and prevent sound leak.</p>
+                  <picture class="image">
+                    <source media="(min-width:1000px)" srcset="./product_details_files/bigBanner02.jpg">
+                    <img src="./product_details_files/news02.jpg">
+                  </picture>
+
+
+                </article>
+              </div>
+            </div>
+        
+        
+            <div class="toggleSlide"><h4 class="toggleCtrl">Spec</h4>
+              <div class="toggleArea">
+                <div class="dataTb spec">
+                  <table>
+                    <tbody><tr>
+                      <th>Function</th>
+                      <td>Microphone</td>
+                    </tr>
+                    <tr>
+                      <th>Style</th>
+                      <td>Headband</td>
+                    </tr>
+                    <tr>
+                      <th>Type</th>
+                      <td>Wired</td>
+                    </tr>
+                    <tr>
+                      <th>Use</th>
+                      <td>Computer, Mobile Phone, Portable Media Player</td>
+                    </tr>
+                    <tr>
+                      <th>Drive Units</th>
+                      <td>53mm</td>
+                    </tr>
+                    <tr>
+                      <th>Frequency Response</th>
+                      <td>10Hz-25KHz</td>
+                    </tr>
+                    <tr>
+                      <th>Impedance</th>
+                      <td>32Ω</td>
+                    </tr>
+                    <tr>
+                      <th>Sensitivity</th>
+                      <td>98dB</td>
+                    </tr>
+                    <tr>
+                      <th>M.P.O.</th>
+                      <td>100mW</td>
+                    </tr>
+                    <tr>
+                      <th>Plug Type</th>
+                      <td>3.5 mm TRRS</td>
+                    </tr>
+                    <tr>
+                      <th>Color Pattern</th>
+                      <td>Built-in Mic:Omni-Directional, Detachable Mic:Uni-Directional</td>
+                    </tr>
+                  </tbody></table>
+                </div>
+              </div>
+            </div>
+          
+            <div class="toggleSlide"><h4 class="toggleCtrl">Product Certification</h4>
+              <div class="toggleArea">
+                <div class="certifiMark">
+                  <ul class="list">
+                    <li class="showLightbox" data-id="pdCerti"><img src="./product_details_files/CE0434-100x100.png"><span class="title">CE 0434 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quas labore culpa, excepturi nam ducimus quisquam! Rem veritatis hic inventore! Similique ut facere nesciunt quo illum reiciendis, modi dolor mollitia.</span></li>
+                    <li class="showLightbox" data-id="pdCerti"><img src="./product_details_files/CQC-100x100.png"><span class="title">CQC excepturi nam ducimus quisquam</span></li>
+                    <li class="showLightbox" data-id="pdCerti"><img src="./product_details_files/CSA-100x100.png"><span class="title">ISO 8001</span></li>
+                    <li class="showLightbox" data-id="pdCerti"><img src="./product_details_files/DEMKO-100x100.png"><span class="title">ISO 8001</span></li>
+                    <li><img src="./product_details_files/EEC-100x100.jpg"><span class="title">E13</span></li>
+                    <li><img src="./product_details_files/CE0434-100x100.png"><span class="title">CE 0434</span></li>
+                    <li><img src="./product_details_files/CE0434-100x100.png"><span class="title">CE 0434</span></li>
+                    <li><img src="./product_details_files/CE0434-100x100.png"><span class="title">CE 0434</span></li>
+                    <li><img src="./product_details_files/CE0434-100x100.png"><span class="title">CE 0434</span></li>
+                    <li><img src="./product_details_files/CE0434-100x100.png"><span class="title">XXX 999</span></li>
+                  </ul>
+                  <div class="more" data-alttext="Less">View more</div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="toggleSlide"><h4 class="toggleCtrl">Attachment</h4>
+              <div class="toggleArea">
+                <div class="attachment">
+                  <ul>
+                    <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">ANKO-Food-Machine-Automatic-Encrusting-And-Forming-Machine-SD-97W-roti-machine-pita-bread-machine.pdf (0.76 MB)</a></li>
+                    <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">Lorem ipsum dolor sit amet.pdf (88 MB)</a></li>
+                    <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">Excepteur sint occaecat cupidatat non proident.pdf (1693 MB)</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="toggleSlide"><h4 class="toggleCtrl">多媒體專區</h4>
+              <div class="toggleArea">
+                <div class="mediaShow">
+                  <div class="showArea">
+                    <ul class="showList">
+                      <li><iframe src="./product_details_files/FH13-5.html"></iframe></li>
+                      <li><iframe src="./product_details_files/embed.html"></iframe></li>
+                      <li><iframe width="560" height="315" src="./product_details_files/FKVThH79Ms4.html" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></li>
+                    </ul>
+                  </div>
+                  <div class="caption">附檔影片說明文字</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="toggleSlide"><h4 class="toggleCtrl">Other Products</h4>
+              <div class="toggleArea">
+                <section class="pdQueue">
+                  <ul class="list">
+                    <li>
+                      <picture class="pdImg">
+                        <source media="(min-width:1000px)" srcset="./product_details_files/pd21.jpg">
+                        <img src="./product_details_files/pd21.jpg" alt="product name">
+                      </picture>
+          
+                      <ol class="pdBriefInfo">
+                        <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones</a></li>
+                        <li><span class="dt">Model No.</span> AH-K9087654321</li>
+                        <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+                        <li class="priceSet">
+                          <span class="currency">USD</span>
+                          <span class="oldPrice">115.20</span>
+                          <span class="discountPrice">105.50</span>
+                        </li>
+                        <li><span class="dt">Certification</span>SGS、CE 0434</li>
+                      </ol>
+          
+                      <div class="bottom">
+                        <span class="freeShippingLabel">Free shipping</span>
+                        <ol class="addTo">
+                          <li class="likeThis"></li>
+                          <li class="addtoCart"></li>
+                        </ol>
+                      </div>
+          
+                      <span class="viewMark v360 showLightbox" data-id="v360-a"></span>
+                      <span class="discountLabel">30</span>
+                      <span class="labelNew">NEW</span>        
+                    </li>
+                    <li>
+                      <picture class="pdImg">
+                        <source media="(min-width:1000px)" srcset="./product_details_files/pd22.jpg">
+                        <img src="./product_details_files/pd22.jpg" alt="product name">
+                      </picture>
+                      
+                      <ol class="pdBriefInfo">
+                        <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Excepteur Sint Occaecat Cupidatat non Proident - Sunt in Culpa Qui Officia Deserunt Mollit Aanim id Est Laborum Sagittis Pulvinar Consequat Elit</a></li>
+                        <li><span class="dt">Model No.</span> AH-K9087654321</li>
+                        <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+                        <li class="priceSet">
+                          <span class="currency">USD</span>
+                          <span class="oldPrice">999999999.20</span>
+                          <span class="discountPrice">888888888.50</span>
+                        </li>
+                        <li><span class="dt">Certification</span>ISO22000:2005, HACCP, ISO 9001 2008, HALAL, SGS, TUV, CE 0434, ISO, CAS ORGANIC, CNS, T-Mark</li>
+          
+                      </ol>
+          
+                      <div class="bottom">
+                        <ol class="addTo">
+                          <li class="likeThis active"></li>
+                          <li class="addtoCart active"></li>
+                        </ol>
+                      </div>
+          
+                      <span class="viewMark v3D showLightbox" data-id="v3D-a"></span><!-- 3D -->
+                      <span class="discountLabel">20</span>
+                      <span class="labelNew">NEW</span>
+          
+                    </li>
+                    <li>
+                      <picture class="pdImg">
+                        <source media="(min-width:1000px)" srcset="./product_details_files/pd24.jpg">
+                        <img src="./product_details_files/pd24.jpg" alt="product name">
+                      </picture>
+                      <ol class="pdBriefInfo">
+                        <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+                        <li><span class="dt">Model No.</span> AH-K9087654321</li>
+                        <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+                        <li class="priceSet">
+                          <span class="currency">USD</span>
+                          <span class="oldPrice">115.20</span>
+                          <span class="discountPrice">105.50</span>
+                        </li>
+                        <li><span class="dt">Certification</span> SGS、CE 0434</li>
+                      </ol>
+          
+                      <div class="bottom">
+                        <span class="freeShippingLabel">Free shipping</span>
+                        <ol class="addTo">
+                          <li class="likeThis"></li>
+                          <li class="addtoCart"></li>
+                        </ol>
+                      </div>
+                      <span class="viewMark vVideo showLightbox" data-id="vVideo-a"></span><!-- video -->
+          
+                    </li>
+                    <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+                      <picture class="pdImg">
+                        <source media="(min-width:1000px)" srcset="./product_details_files/pd23.jpg">
+                        <img src="./product_details_files/pd23.jpg" alt="product name">
+                      </picture>
+                      </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+                        </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+                        <li><span class="dt">Model No.</span> AH-K9087654321</li>
+                        <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+                        <li class="priceSet">
+                          <span class="currency">USD</span>
+                          <span class="oldPrice">115.20</span>
+                          <span class="discountPrice">105.50</span>
+                        </li>
+                        <li><span class="dt">Certification</span> SGS、CE 0434</li>
+                      </ol>
+          
+                      <div class="bottom">
+                        <ol class="addTo">
+                          <li class="likeThis"></li>
+                          <li class="addtoCart"></li>
+                        </ol>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+  
+          </div>
+        </div><!-- /.tabContent: Product Details -->
+  
+        <div class="tabContent"><h3 class="tabHead">Shipping &amp; Packaging</h3>
+          <div class="tabBody">
+            <h4>Calculate your shipping cost by country/region and quantity.</h4>
+            <!-- <div class="calcShippingCost">
+              <div class="quantity">Quantity: <input type="text" name="" id="">Unit(s)</div>
+              <div class="destination">
+                Ship to:
+                <select>
+                  <option>Taiwan</option>
+                  <option>Afghanistan</option>
+                  <option>Algeria</optionstan>
+                  <option>American Samoa</option>
+                  <option>Andorra</option>
+                </select>
+              </div>
+            </div> 
+          -->
+            <div class="calcShippingCost">
+              <div class="quantity"> Quantity: <input type="text">Unit </div>
+              <div class="destination"> Ship to:
+                <select id="selectCountry">
+                  <option data-code="US" value="481"> United States </option>
+                  <option data-code="AF" value="586"> Afghanistan </option>
+                  <option data-code="AL" value="692"> Albania </option>
+                  <option data-code="DZ" value="658"> Algeria </option>
+                  <option data-code="AS" value="523"> American Samoa </option>
+                  <option data-code="AD" value="600"> Andorra </option>
+                  <option data-code="AO" value="647"> Angola </option>
+                  <option data-code="AI" value="483"> Anguilla </option>
+                  <option data-code="AQ" value="551"> Antarctica </option>
+                  <option data-code="AG" value="669"> Antigua And Barbuda </option>
+                  <option data-code="AR" value="510"> Argentina </option>
+                  <option data-code="AM" value="601"> Armenia </option>
+                  <option data-code="AW" value="511"> Aruba </option>
+                  <option data-code="AU" value="524"> Australia </option>
+                  <option data-code="AT" value="602"> Austria </option>
+                  <option data-code="AZ" value="693"> Azerbaijan </option>
+                  <option data-code="XO" value="509"> BR T/C C A </option>
+                  <option data-code="BS" value="670"> Bahamas </option>
+                  <option data-code="BH" value="587"> Bahrain </option>
+                  <option value="000"> ... ... ... </option>
+                  <option data-code="ZM" value="474"> Zambia </option>
+                  <option data-code="ZW" value="476"> Zimbabwe </option>
+                </select> 
+                <select id="selectState">
+                  <option value="811"> ALABAMA </option>
+                  <option value="862"> WYOMING </option>
+                  <option value="813"> ARKANSAS </option>
+                  <option value="814"> CALIFORNIA </option>
+                  <option value="815"> COLORADO </option>
+                  <option value="816"> CONNECTICUT </option>
+                  <option value="817"> DELAWARE </option>
+                  <option value="818"> DISTRICT OF COLUMBIA </option>
+                  <option value="819"> FLORIDA </option>
+                  <option value="820"> GEORGIA </option>
+                  <option value="821"> HAWAII </option>
+                  <option value="822"> IDAHO </option>
+                  <option value="823"> ILLINOIS </option>
+                </select>
+                 <input id="shippingZipCode" type="text" placeholder="Zip Code">
+              </div>
+            </div>    
+            <div class="listTb">
+              <table>
+                <tbody><tr>
+                  <th>Shipping Company</th>
+                  <th>Shipping Cost</th>
+                  <th>Estimated Delivery Time</th>
+                </tr>
+                <tr>
+                  <td><img class="shippingCompLogo" src="./product_details_files/shippingCompany_fedex.png" alt="FedEx Corporation"><span class="shippingCompName">FedEx</span></td>
+                  <td><span class="freeShippingLabel">Free shipping</span></td>
+                  <td>3-7 Days</td>
+                </tr>
+                <tr>
+                  <td><img class="shippingCompLogo" src="./product_details_files/shippingCompany_ems.png" alt="International Express Mail Service"><span class="shippingCompName">International Express Mail Service</span></td>
+                  <td><span class="freeShippingLabel">Free shipping</span></td>
+                  <td>3-7 Days</td>
+                </tr>
+                <tr>
+                  <td><img class="shippingCompLogo" src="./product_details_files/shippingCompany_tnt.png" alt="TNT Express"><span class="shippingCompName">TNT</span></td>
+                  <td>USD 10</td>
+                  <td>3-7 Days</td>
+                </tr>
+                <tr>
+                  <td><img class="shippingCompLogo" src="./product_details_files/shippingCompany_ups.png" alt="United Parcel Service, Inc."><span class="shippingCompName">United Parcel Service, Inc.</span></td>
+                  <td>USD 10</td>
+                  <td>3-7 Days</td>
+                </tr>
+                <tr>
+                  <td><img class="shippingCompLogo" src="./product_details_files/shippingCompany_dhl.png" alt="DHL Express"><span class="shippingCompName">DHL</span></td>
+                  <td>USD 10</td>
+                  <td>3-7 Days</td>
+                </tr>
+                <tr>
+                  <td><img class="shippingCompLogo" src="./product_details_files/shippingCompany_other.png" alt="others"><span class="shippingCompName">Other</span></td>
+                  <td>USD 10</td>
+                  <td>Expected delivery time contact suppliers</td>
+                </tr>
+
+
+              </tbody></table>
+            </div>
+          </div>
+  
+        </div><!-- /.tabContent: Shipping & Packaging -->
+  
+        <div class="tabContent"><h3 class="tabHead">Payment Terms</h3>
+          <div class="tabBody">
+            <div class="listTb">
+              <table>
+                <tbody><tr>
+                  <th>Accepted payment method</th>
+                  <th>Currency</th>
+                </tr>
+                <tr>
+                  <td><img src="./product_details_files/alipay.png" alt="支付寶"></td>
+                  <td>TWD</td>
+                </tr>
+                <tr>
+                  <td><img src="./product_details_files/paypal.png" alt="PayPal"></td>
+                  <td>TWD,EUR,JPY,GBP,HKD,USD</td>
+                </tr>
+                <tr>
+                  <td><img src="./product_details_files/card.png" alt="credit card"></td>
+                  <td>TWD,TWD</td>
+                </tr>
+              </tbody></table>
+            </div>
+            <h4>Payment Details for Offline Orders</h4>
+            <div class="listTb">
+              <table>
+                <tbody><tr>
+                  <th>Payment Terms</th>
+                  <th>L/C ,TT</th>
+                </tr>
+                <tr>
+                  <td>Minimum Order</td>
+                  <td>2 Pieces</td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div><!-- /.tabContent: Payment Terms -->
+  
+        <div class="tabContent"><h3 class="tabHead">Return Policy</h3>
+          <div class="tabBody">
+            <article>
+              <p>How to Write and Promote a Return Policy Customers Love (Includes Example Refund Policies From Real Ecommerce Businesses)</p>
+              <p>GET THE PRINT VERSION</p>
+              <p>Tired of scrolling? Download a PDF version for easier offline reading and sharing with coworkers.</p>
+              <p>DOWNLOAD PDF</p>
+              <p>In early 2017, LL Bean rolled back their infamous return policy to be just a little less generous.</p>
+              <p>They were known for their ludicrous satisfaction guarantee policy that once saw a family return 20 year old clothes from their grandfather’s attic in exchange for a $350 gift card.</p>
+              <p>After seeing their policy abused too many times, LL Bean now offers a much more reasonable 1 year satisfaction guarantee – still one of the most generous on the market.</p>
+              <p>Designing a reasonable return policy is a critical part of your business strategy, as overly relaxed return policies can potentially cost you money.</p>
+              <p>The Returns Economy By The Numbers</p>
+              <p>Product returns can have a significant impact on your store’s bottom line — in more ways than one.</p>
+              <p>The cost of product returns, on top of free return shipping (if you offer it) can be overwhelming to your business. But the threat of lost sales if you don’t? It’s real.</p>
+              <p>Overall returns statistics.</p>
+              <p>According to the National Retail Federation, in 2018 customers returned $369 billion — about 10% — of all purchases, brick-and-mortar and online.</p>
+              <p>Return rates jump to about 30% or higher when looking at just online purchases. For example, Revolve, the popular online clothing seller, made $400 million in net sales in 2017, but paid out an almost equal amount, $385 million, for returns, writes Recode’s Jason Del Rey. That doesn’t include the cost of return shipping.</p>
+              <p>But your returns policies and the return process also have significant impact on customer satisfaction. A 2019 survey from UPS found that, for 73% of shoppers, the overall returns experience impacts how likely they are to purchase from a given retailer again, and 68% say the experience impacts their overall perceptions of the retailer.</p>
+            </article>
+          </div>
+        </div><!-- /.tabContent: Return Policy -->
+      </div>
+
+
+      
+      
+    </div><!-- /.tabGroup -->
+
+
+
+
+
+
+
+
+    <section class="pdQueue ckSlide"><h2>Recommendations</h2>
+      <div class="slideArea"><ul class="list">
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd11.jpg">
+            <img src="./product_details_files/pd11.jpg" alt="product name">
+          </picture>
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal WwwwwwwwwwwwwwwwwwwwwwwwwZ Earphones</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+          </ol>
+
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+            </ol>
+          </div>
+          <span class="labelNew">NEW</span>
+          
+        </li>
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd12.jpg">
+            <img src="./product_details_files/pd12.jpg" alt="product name">
+          </picture>
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>very LooooooooooooooooooooooongWord</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+          </ol>
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+            </ol>
+          </div>
+          <!-- <span class="labelNew">NEW</span> -->
+          
+        </li>
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd15.jpg">
+            <img src="./product_details_files/pd15.jpg" alt="product name">
+          </picture>
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Posuere Dolor sit amet consectetur adipiscing elit duis</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+          </ol>
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+            </ol>
+          </div>
+          <span class="labelNew">NEW</span>
+          
+        </li>
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd13.jpg">
+            <img src="./product_details_files/pd13.jpg" alt="product name">
+          </picture>
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Mauris ultrices eros in cursus turpis massa tincidunt dui</a></li>
+            <li><span class="dt">Model No.</span> ZX-V12345678987654321</li>
+          </ol>            <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+            </ol>
+          </div>
+        </li>
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd16.jpg">
+            <img src="./product_details_files/pd16.jpg" alt="product name">
+          </picture>
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Excepteur sint occaecat cupidatat non proident</a></li>
+            <li><span class="dt">Model No.</span> ZX-V12345678987654321</li>
+          </ol>
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+            </ol>
+          </div>
+        </li>
+
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/ph02.jpg">
+            <img src="./product_details_files/ph02.jpg" alt="product name">
+          </picture>
+          </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+          </ol>
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+            </ol>
+          </div>
+          <span class="labelNew">NEW</span>
+
+        </li>
+
+      </ul></div>
+    <span class="arrowLeft"></span><span class="arrowRight"></span></section>
+
+    <section class="pdQueue ckSlide"><h2>Small Order Recommendation</h2>
+      <div class="slideArea"><ul class="list">
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd21.jpg">
+            <img src="./product_details_files/pd21.jpg" alt="product name">
+          </picture>
+
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+            <li class="priceSet">
+              <span class="currency">USD</span>
+              <span class="oldPrice">115.20</span>
+              <span class="discountPrice">105.50</span>
+            </li>
+          </ol>
+
+          <div class="bottom">
+            <span class="freeShippingLabel">Free shipping</span>
+            <ol class="addTo">
+              <li class="likeThis"></li>
+              <li class="addtoCart"></li>
+            </ol>
+          </div>
+
+          <span class="discountLabel">30</span>
+          <span class="labelNew">NEW</span>
+          
+
+        </li>
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd22.jpg">
+            <img src="./product_details_files/pd22.jpg" alt="product name">
+          </picture>
+          
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>Excepteur Sint Occaecat Cupidatat non Proident - Sunt in Culpa Qui Officia Deserunt Mollit Aanim id Est Laborum Sagittis Pulvinar Consequat Elit</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+            <li class="priceSet">
+              <span class="currency">USD</span>
+              <span class="oldPrice">999999999.20</span>
+              <span class="discountPrice">888888888.50</span>
+            </li>
+
+          </ol>
+
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis active"></li>
+              <li class="addtoCart active"></li>
+            </ol>
+          </div>
+
+          <span class="discountLabel">20</span>
+          <span class="labelNew">NEW</span>
+          
+
+        </li>
+        <li>
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd24.jpg">
+            <img src="./product_details_files/pd24.jpg" alt="product name">
+          </picture>
+          <ol class="pdBriefInfo">
+            <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"><span class="labelFeatured">Featured</span>AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+            <li class="priceSet">
+              <span class="currency">USD</span>
+              <span class="oldPrice">115.20</span>
+              <span class="discountPrice">105.50</span>
+            </li>
+          </ol>
+
+          <div class="bottom">
+            <span class="freeShippingLabel">Free shipping</span>
+            <ol class="addTo">
+              <li class="likeThis"></li>
+              <li class="addtoCart"></li>
+            </ol>
+          </div>
+          <span class="discountLabel">15</span>
+          
+
+        </li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd23.jpg">
+            <img src="./product_details_files/pd23.jpg" alt="product name">
+          </picture>
+          </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+            <li class="priceSet">
+              <span class="currency">USD</span>
+              <span class="oldPrice">115.20</span>
+              <span class="discountPrice">105.50</span>
+            </li>
+          </ol>
+
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+              <li class="addtoCart"></li>
+            </ol>
+          </div>
+        </li>
+
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/ph02.jpg">
+            <img src="./product_details_files/ph02.jpg" alt="product name">
+          </picture>
+          </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">AH-K90 Wired 3.5mm Metal Earphones ( 12 Pack )</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+            <li class="priceSet">
+              <span class="currency">USD</span>
+              <span class="oldPrice">115.20</span>
+              <span class="discountPrice">105.50</span>
+            </li>
+          </ol>
+
+          <div class="bottom">
+            <span class="freeShippingLabel">Free shipping</span>
+            <ol class="addTo">
+              <li class="likeThis"></li>
+              <li class="addtoCart"></li>
+            </ol>
+          </div>
+        </li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/ph01.jpg">
+            <img src="./product_details_files/ph01.jpg" alt="product name">
+          </picture>
+          </a><ol class="pdBriefInfo"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+            </a><li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage"></a><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">Ristique Nulla aliquet enim tortor at auctor urna</a></li>
+            <li><span class="dt">Model No.</span> AH-K9087654321</li>
+            <li><span class="dt">Min. Order</span> 1 Piece(s)</li>
+            <li class="priceSet">
+              <span class="currency">USD</span>
+              <span class="price">555.55</span>
+              </li>
+          </ol>
+
+          <div class="bottom">
+            <ol class="addTo">
+              <li class="likeThis"></li>
+              <li class="addtoCart"></li>
+            </ol>
+          </div>
+
+        </li>
+      </ul></div>
+    <span class="arrowLeft"></span><span class="arrowRight"></span></section>
+
+    <section class="likeAlso"><h2> You may also like</h2>
+      <ul>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">Infrared Headphone</a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">Personal Voice Amplifier</a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">Headphone Hanger</a></li>
+      </ul>
+    </section>
+
+
+
+
+  </div><!-- /.main -->
+
+
+
+
+
+<footer class="webFooter">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:info@anko.com.tw">info@anko.com.tw</a></p>
+      <p>Phone: <a href="tel:+886222888899">+886-2-2288-8899</a></p>
+      <button class="footer-btn">Contact Us</button>
+    </div>
+
+    <div class="footer-column emailUpdate">
+      <h3>Email Updates</h3>
+      <p>Interested in this store?</p>
+      <button type="submit" class="footer-btn">Subscribe</button>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/product-catalog/all-products.html">Latest Products</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/contact/supplier">Contact Us</a></li>
+        <li><a href="/newslist">News</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+  <h3>Follow Us</h3>
+  <div class="footer-subgroup">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/ANKOFoodMachine" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/facebook--v1.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/anko_food_machine/" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/instagram-new.png" alt="Instagram" />
+      </a>
+      <a href="https://www.youtube.com/channel/UC2cvUB50FbA9H5ru19KKMNw" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/youtube-play.png" alt="YouTube" />
+      </a>
+      <a href="https://www.linkedin.com/company/anko-food-machine" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/40/linkedin.png" alt="LinkedIn" />
+      </a>
+    </div>
+    <div class="qr-code-wrapper">
+      <img src="https://ankofood.en.taiwantrade.com/qrcode/w360h360/L/ankofood.en.taiwantrade.com.gif" alt="QR Code" class="qr-code">
+    </div>
+  </div>
+</div>
+
+</footer>
+
+
+
+
+<div class="footer-bottom">
+  <p>
+    <a href="https://www.taiwantrade.com/" target="_blank">Powered by
+      <img src="./EP - Products List_files/taiwantrade.com.png" alt="Taiwan Trade" class="tt-logo">
+    </a>
+    <a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/sitemap.htm">Site Map</a>
+    © 2002–2020 TAITRA. All rights reserved.
+  </p>
+</div>
+
+
+
+  <div class="floatingBar" style="display: none;">
+    <ul>
+      <li class="goTop"><a href="javascript:;"><img src="./product_details_files/ficon_goTop.png"></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_cart.png"><span class="count">0</span></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_customized.png"></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_howto.png"></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_inquiries.png"><span class="count">5</span></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_orderComment.png"><span class="count">8</span></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_notification.png"><span class="count">99+</span></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_account.png"></a></li>
+      <li><a href="javascript:;"><img src="./product_details_files/ficon_setting.png"></a></li>
+      <li class="goBottom"><a href="javascript:;"><img src="./product_details_files/ficon_goBottom.png"></a></li>
+    </ul>
+  </div>
+
+ 
+
+  <!-- 酒類警語
+  <div class="bottomWarning">
+    <img src="./product_details_files/warning.jpg" alt="禁止酒駕">
+    <div class="fullWidth"><img src="./product_details_files/no-drinking-under-18.png" alt="禁止酒駕"></div>
+  </div>
+ -->
+  <!-- 以下為燈箱 -->
+  <div class="lightbox panorama" id="v360-a">
+    <span class="closeThis" title="close"></span>
+    <div class="productShow">
+      <iframe src="./product_details_files/FH4-3.html" style=""></iframe>
+      <iframe src="./product_details_files/FH13-5(1).html" style="display: none;"></iframe>
+      <iframe src="./product_details_files/FH16-1.html" style="display: none;"></iframe>
+    <ul class="dots"><li class="current"></li><li></li><li></li></ul></div>
+    <div class="productInfo">
+      <ul>
+        <li class="pdName"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/product_cp.html#">Best Herbal body lotion Nourishing Long-Lasting for Skin Care Products for Sensitive Skin and Cracked Skin, 210 ml</a>      </li>
+        <li class="pdPrice"><del>USD 8,888,888,888.00 ~ 9,999,999,999.00</del><span class="unit"> / Pack (1 Unit/Units)</span></li>
+        <li class="pdPriceDiscount">USD 7,777,777,777.00 ~ 9,666,666,666.00<span class="unit"> / Pack (1 Unit/Units)</span></li>
+        <li class="pdSupplier">
+          <span class="itemLabel">Supplier:</span> <em>CHUANG YANG ENTERPRISE CO., LTD.</em>
+        </li>
+      </ul>
+  
+      <div class="shareproduct">
+        <div class="addthis_inline_share_toolbox_49zg"></div>
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="lightbox certification" id="pdCerti">
+    <span class="closeThis" title="close"></span>
+    <div class="head">
+      <h3>Product Certification</h3>
+    </div>
+    <section class="infoAndMark">
+      <figure>
+        <img src="./product_details_files/CE0434-100x100.png" alt="CE 0434">
+      </figure>
+      <div class="dataTb rwd">
+        <table>
+          <tbody><tr>
+            <th>Certification Name</th>
+            <td>TUV</td>
+          </tr>
+          <tr>
+            <th>Certification No.</th>
+            <td>HK07/ 01371</td>
+          </tr>
+          <tr>
+            <th>Certification Start Time</th>
+            <td>2018-04-26</td>
+          </tr>
+          <tr>
+            <th>Certification End Time</th>
+            <td>2021-04-25</td>
+          </tr>
+          <tr>
+            <th>Certification description</th>
+            <td>The ISO 9000 family addresses various aspects of quality management and contains some of ISO’s best known standards. The standards provide guidance and tools for companies and organizations who want to ensure that their products and services consistently meet customer’s requirements, and that quality is consistently improved.</td>
+          </tr>
+          <tr>
+            <th>Attachments</th>
+            <td><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/TUV_Certified.pdf" download="">TUV Certified.pdf</a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <section class="sameCertiPds">
+      <ul class="list">
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/ph04.jpg">
+            <img src="./product_details_files/ph04.jpg" alt="product name">
+          </picture>
+          <p>PRODUCT NAME</p>
+        </a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/ph09.jpg">
+            <img src="./product_details_files/ph09.jpg" alt="product name">
+          </picture>
+          <p>At lectus urna duis convallis convallis tellus id</p>
+        </a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd24.jpg">
+            <img src="./product_details_files/pd24.jpg" alt="product name">
+          </picture>
+          <p>Non curabit gravida arcu tortor dignissim conva</p>
+        </a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/pd31s.jpg">
+            <img src="./product_details_files/pd31s.jpg" alt="product name">
+          </picture>
+          <p>Tristique nulla aliquet enim tortor at auctor urna</p>
+        </a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/xpage">
+          <picture class="pdImg">
+            <source media="(min-width:1000px)" srcset="./product_details_files/ph02.jpg">
+            <img src="./product_details_files/ph02.jpg" alt="product name">
+          </picture>
+          <p>Tristique nulla aliquet enim tortor at auctor urna</p>
+        </a></li>
+      </ul>
+    </section>
+
+    <div class="searchMore"><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x">More</a></div>
+
+  </div>
+
+
+ <!-- 產品 zoom in 套件測試（copy 線上的 code）-->
+  <div id="imgEnlarge" class="lightbox imgEnlarge">
+    <span id="closeImageEnlarge" title="close" class="closeThis"></span>
+    <div id="enlarge-img" class="view_largeimg" style="display: block;">
+      <ul class="zoom_thumbnails">
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x"><img src="./product_details_files/pd01.jpg" alt="product name"></a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x"><img src="./product_details_files/pd02.jpg" alt="product name"></a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x"><img src="./product_details_files/pd03.jpg" alt="product name"></a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x"><img src="./product_details_files/pd04.jpg" alt="product name"></a></li>
+        <li><a href="http://u00.hyweb.com.tw/GUI/Taiwantrade/ep/pages/x"><img src="./product_details_files/ph10.jpg" alt="product name"></a></li>
+      </ul>
+      <div id="zoom_container" class="zoom_container noSel smooth_zoom_preloader" style="position: relative; overflow: hidden; text-align: left; user-select: none; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(255, 255, 255); background-position: center center; background-repeat: no-repeat; width: 630px; height: 440px; background-image: none;">
+        <img src="./product_details_files/pd04.jpg" galleryimg="no" style="cursor: move; transform-origin: 0px 0px; backface-visibility: hidden; perspective: 1000px; position: absolute; z-index: 2; left: 0px; top: 0px; box-shadow: rgba(0, 0, 0, 0) 1px 1px; transform: translate(0px, 63.18px) scale(0.84);">
+        <div style="position: absolute; z-index: 1; top: 0px; left: 0px; width: 100%; height: 100%; cursor: move;"></div>
+        <div style="position: absolute; width: 1px; height: 440px; top: 0px; left: 0px; z-index: 3; background-color: rgb(0, 0, 0); opacity: 0.2;"></div>
+        <div style="position: absolute; width: 1px; height: 440px; top: 0px; left: 629px; z-index: 4; background-color: rgb(0, 0, 0); opacity: 0.2;"></div>
+        <div style="position: absolute; width: 628px; height: 1px; top: 0px; left: 1px; z-index: 5; background-color: rgb(0, 0, 0); line-height: 1px; opacity: 0.2;"></div>
+        <div style="position: absolute; width: 628px; height: 1px; top: 439px; left: 1px; z-index: 6; background-color: rgb(0, 0, 0); line-height: 1px; opacity: 0.2;"></div>
+        <div style="position: absolute; right:4px; top: 4px; width: 107px; height: 70px; z-index: 20;" class="noSel;">
+          <div class="noSel controlsBg" style="position: relative; width: 100%; height: 100%; z-index: 1; border-radius: 5px; background-color: rgb(255, 255, 255); opacity: 0.35;"> </div>
+          <div style="position: absolute; display: block; left: 4px; top: 12px; width: 22px; height: 22px; z-index: 1; opacity: 0.7;" class="noSel">
+            <div id="_zinorm" style="position: absolute; left: 1px; top: 1px; width: 20px; height: 20px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_ziover" style="position: absolute; left: 0px; top: 0px; width: 22px; height: 22px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_zi_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 20px; height: 20px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -15px -15px no-repeat;"> </div>
+          </div>
+          <div style="position: absolute; display: block; left: 4px; top: 36px; width: 22px; height: 22px; z-index: 2; opacity: 0.4;" class="noSel">
+            <div id="_zonorm" style="position: absolute; left: 1px; top: 1px; width: 20px; height: 20px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_zoover" style="position: absolute; left: 0px; top: 0px; width: 22px; height: 22px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_zo_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 20px; height: 20px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -65px -15px no-repeat;"> </div>
+          </div>
+          <div style="position: absolute; display: block; left: 41px; top: 25px; width: 20px; height: 20px; z-index: 3; opacity: 0.7;" class="noSel">
+            <div id="_mrnorm" style="position: absolute; left: 1px; top: 1px; width: 18px; height: 18px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_mrover" style="position: absolute; left: 0px; top: 0px; width: 20px; height: 20px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_mr_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 18px; height: 18px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -116px -16px no-repeat;"> </div>
+          </div>
+          <div style="position: absolute; display: block; left: 83px; top: 25px; width: 20px; height: 20px; z-index: 4; opacity: 0.7;" class="noSel">
+            <div id="_mlnorm" style="position: absolute; left: 1px; top: 1px; width: 18px; height: 18px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_mlover" style="position: absolute; left: 0px; top: 0px; width: 20px; height: 20px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_ml_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 18px; height: 18px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -166px -16px no-repeat;"> </div>
+          </div>
+          <div style="position: absolute; display: block; left: 62px; top: 46px; width: 20px; height: 20px; z-index: 5; opacity: 0.7;" class="noSel">
+            <div id="_munorm" style="position: absolute; left: 1px; top: 1px; width: 18px; height: 18px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_muover" style="position: absolute; left: 0px; top: 0px; width: 20px; height: 20px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_mu_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 18px; height: 18px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -216px -16px no-repeat;"> </div>
+          </div>
+          <div style="position: absolute; display: block; left: 62px; top: 4px; width: 20px; height: 20px; z-index: 6; opacity: 0.7;" class="noSel">
+            <div id="_mdnorm" style="position: absolute; left: 1px; top: 1px; width: 18px; height: 18px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_mdover" style="position: absolute; left: 0px; top: 0px; width: 20px; height: 20px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_md_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 18px; height: 18px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -266px -16px no-repeat;"> </div>
+          </div>
+          <div style="position: absolute; display: block; left: 62px; top: 25px; width: 20px; height: 20px; z-index: 7; opacity: 0.7;" class="noSel">
+            <div id="_rsnorm" style="position: absolute; left: 1px; top: 1px; width: 18px; height: 18px; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_rsover" style="position: absolute; left: 0px; top: 0px; width: 20px; height: 20px; display: none; background: rgb(255, 255, 255); border-radius: 2px;"> </div>
+            <div id="_rs_icon" style="position: absolute; left: 0px; top: 0px;border:#939393 solid 1px; width: 18px; height: 18px; background: transparent url(https://cs01.ttstaging.com.tw/ep/7709c0f/common-new/images/icon/icons_view_large.png) -316px -16px no-repeat;"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 以下為彈出訊息 -->
+  <section class="popMsg" id="msg000">
+    <div class="popBody">
+      <p>Please Select: Color, Quantity, Size</p>
+    </div>
+    <div class="btnDv"><span class="btnLook closePop"><a>Ok</a></span></div>
+  </section>
+
+
+  
+  <!-- 遮罩 -->
+  <div class="coverAll"></div><!-- 燈箱的遮罩 -->
+  <div class="sidebarMask" style="display: none;"></div><!-- 行動版側欄選單的遮罩 -->
+
+
+<div id="quick-start-container"></div></body></html>
